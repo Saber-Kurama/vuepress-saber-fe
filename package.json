@@ -12,5 +12,8 @@
   },
   "devDependencies": {
     "vuepress": "^2.0.0-beta.36"
+  },
+  "dependencies": {
+    "@vuesax/vuepress-theme-vuesax": "^0.0.11"
   }
 }
