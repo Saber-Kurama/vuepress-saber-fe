@@ -1,6 +1,8 @@
+import path from 'path';
 import { defineUserConfig } from "vuepress";
 import type { DefaultThemeOptions } from "vuepress";
 
+console.log('__dirname', __dirname)
 export default defineUserConfig({
   // 站点配置
   lang: "zh-CN",
@@ -14,4 +16,6 @@ export default defineUserConfig({
   // themeConfig: {
   //   logo: 'https://vuejs.org/images/logo.png',
   // },
+  theme: path.resolve(__dirname, '../../theme-default/src/node/index.ts'),
+  // theme: '@vuepress/theme-default/lib/node/index.js'
 });
