@@ -10,8 +10,8 @@ export default defineUserConfig({
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, shrink-to-fit=no' }],
   ],
   // // 主题和它的配置
-  theme: '@vuesax/vuepress-theme-vuesax',
-  themeConfig: {
-    logo: 'https://vuejs.org/images/logo.png',
-  },
+  // theme: '@vuesax/vuepress-theme-vuesax',
+  // themeConfig: {
+  //   logo: 'https://vuejs.org/images/logo.png',
+  // },
 });
