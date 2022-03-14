@@ -1,23 +1,23 @@
 {
-  "name": "@vuepress/theme-default",
-  "version": "2.0.0-beta.36",
-  "description": "Default theme of VuePress",
+  "name": "@dangojs/vuepress2-theme-vuesax",
+  "version": "0.0.1",
+  "description": "",
   "keywords": [
     "vuepress-theme",
     "vuepress",
     "theme",
-    "default"
+    "vuesax"
   ],
   "homepage": "https://github.com/vuepress",
   "bugs": {
-    "url": "https://github.com/vuepress/vuepress-next/issues"
+    "url": ""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuepress/vuepress-next.git"
+    "url": ""
   },
   "license": "MIT",
-  "author": "Evan You",
+  "author": "",
   "main": "lib/node/index.js",
   "types": "lib/node/index.d.ts",
   "files": [

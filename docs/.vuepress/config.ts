@@ -1,3 +1,10 @@
+/*
+ * @Author: saber
+ * @Date: 2022-03-14 09:59:34
+ * @LastEditTime: 2022-03-14 21:15:11
+ * @LastEditors: saber
+ * @Description: 
+ */
 import path from 'path';
 import { defineUserConfig } from "vuepress";
 import type { DefaultThemeOptions } from "vuepress";
@@ -13,9 +20,11 @@ export default defineUserConfig({
   ],
   // // 主题和它的配置
   // theme: '@vuesax/vuepress-theme-vuesax',
-  // themeConfig: {
-  //   logo: 'https://vuejs.org/images/logo.png',
-  // },
-  theme: path.resolve(__dirname, '../../theme-default/src/node/index.ts'),
+  theme: path.resolve(__dirname, '../../theme/lib/node/index.js'),
+  // theme: '@vuepress/theme-default',
+  themeConfig: {
+    logo: 'https://vuejs.org/images/logo.png',
+  },
+  
   // theme: '@vuepress/theme-default/lib/node/index.js'
 });

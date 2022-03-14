@@ -2,3 +2,5 @@ node_modules
 .temp
 .cache
 docs/.vuepress/dist
+theme-default/lib
+theme/lib
