@@ -1,2 +1,5 @@
+---
+home: true
+---
 # Hello
 sad

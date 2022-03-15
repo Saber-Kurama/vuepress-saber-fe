@@ -44,3 +44,13 @@
   border-bottom: 0px !important;
   width: 100%;
 }
+.sidebar-mask {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  background: rgba(0, 0, 0, 0.3);
+}
