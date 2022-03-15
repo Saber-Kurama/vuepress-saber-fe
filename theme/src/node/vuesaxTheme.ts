@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2022-03-14 20:48:41
- * @LastEditTime: 2022-03-14 21:41:24
+ * @LastEditTime: 2022-03-15 11:00:28
  * @LastEditors: saber
  * @Description: 
  */
@@ -30,10 +30,16 @@ export const vuesaxTheme: Theme<VuesaxThemeOptions> = ({ themePlugins = {}, ...l
     //   Layout: path.resolve(__dirname, '../client/layouts/Layout.vue'),
     //   404: path.resolve(__dirname, '../client/layouts/404.vue'),
     // }
+    clientAppEnhanceFiles: path.resolve(
+      __dirname,
+      '../client/clientAppEnhance.js'
+    ),
+
+    clientAppSetupFiles: path.resolve(__dirname, '../client/clientAppSetup.js'),
     plugins: [
       [
         '@vuepress/active-header-links',
-        // resolveActiveHeaderLinksPluginOptions(themePlugins),
+        resolveActiveHeaderLinksPluginOptions(themePlugins),
       ],
     ]
   }

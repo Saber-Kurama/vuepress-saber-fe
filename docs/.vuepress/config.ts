@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2022-03-14 09:59:34
- * @LastEditTime: 2022-03-14 21:52:19
+ * @LastEditTime: 2022-03-15 10:43:05
  * @LastEditors: saber
  * @Description: 
  */
@@ -20,8 +20,8 @@ export default defineUserConfig({
   ],
   // // 主题和它的配置
   // theme: '@vuesax/vuepress-theme-vuesax',
-  // theme: path.resolve(__dirname, '../../theme/lib/node/index.js'),
-  theme: path.resolve(__dirname, '../../theme-default/lib/node/index.js'),
+  theme: path.resolve(__dirname, '../../theme/lib/node/index.js'),
+  // theme: path.resolve(__dirname, '../../theme-default/lib/node/index.js'),
   // theme: '@vuepress/theme-default',
   themeConfig: {
     logo: 'https://vuejs.org/images/logo.png',
