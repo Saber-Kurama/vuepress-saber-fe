@@ -54,6 +54,7 @@ export const vuesaxTheme: Theme<VuesaxThemeOptions> = ({ themePlugins = {}, ...l
         '@vuepress/active-header-links',
         resolveActiveHeaderLinksPluginOptions(themePlugins),
       ],
+      ['@vuepress/theme-data', { themeData: localeOptions }],
     ]
   }
 }
