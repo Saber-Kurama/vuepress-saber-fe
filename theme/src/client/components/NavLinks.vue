@@ -1,0 +1,11 @@
+<script lang="ts" setup></script>
+<template>
+  <nav class="nav-links"></nav>
+</template>
+<style lang="scss">
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>

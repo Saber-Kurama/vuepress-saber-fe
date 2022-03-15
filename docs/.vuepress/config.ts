@@ -1,13 +1,14 @@
 /*
  * @Author: saber
  * @Date: 2022-03-14 09:59:34
- * @LastEditTime: 2022-03-15 10:43:05
+ * @LastEditTime: 2022-03-15 17:42:59
  * @LastEditors: saber
  * @Description: 
  */
 import path from 'path';
 import { defineUserConfig } from "vuepress";
 import type { DefaultThemeOptions } from "vuepress";
+import svgLoader from 'vite-svg-loader';
 
 console.log('__dirname', __dirname)
 export default defineUserConfig({
@@ -26,6 +27,11 @@ export default defineUserConfig({
   themeConfig: {
     logo: 'https://vuejs.org/images/logo.png',
   },
-  
+  bundler: '@vuepress/vite',
+  bundlerConfig: {
+    viteOptions: {
+      plugins: [svgLoader()]
+    }
+  }, 
   // theme: '@vuepress/theme-default/lib/node/index.js'
 });

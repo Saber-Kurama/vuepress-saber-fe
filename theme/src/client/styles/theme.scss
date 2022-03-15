@@ -24,11 +24,23 @@
   --vs-theme-code2: #363449;
 }
 
-.theme-container{
+.theme-container {
   background: red;
 }
-.page{
+.page {
   margin-left: 260px;
   padding-left: 0px !important;
   background-color: var(--vs-theme-bg) !important;
+}
+.navbar {
+  position: fixed;
+  z-index: 20000;
+  top: 0;
+  right: 0px;
+  left: auto;
+  height: auto;
+  background-color: var(--vs-theme-layout);
+  box-sizing: border-box;
+  border-bottom: 0px !important;
+  width: 100%;
 }
