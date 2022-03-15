@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, reactive } from 'vue';
 import { useRouter } from 'vue-router'
+import {
+  ClientOnly
+} from '@vuepress/client'
 import HeaderNotification from '../components/HeaderNotification.vue';
 import Navbar from '../components/Navbar.vue';
 // close sidebar after navigation
