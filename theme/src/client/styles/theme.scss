@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("/Poppins/Poppins-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+:root {
+  --vs-primary: 26, 92, 255;
+  --vs-theme-bg: #f4f7f8;
+  --vs-theme-color: #2c3e50;
+  --vs-theme-layout: #fff;
+  --vs-theme-bg2: #eef2f5;
+  --vs-theme-code: #3f3d56;
+  --vs-theme-code2: #363449;
+}
+
+.theme-container{
+  background: red;
+}

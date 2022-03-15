@@ -14,7 +14,7 @@ onUnmounted(() => {
 })
 </script>
 <template>
-  <div>
+  <div id="vs-app" class="theme-container">
     <Content />
   </div>
 </template>

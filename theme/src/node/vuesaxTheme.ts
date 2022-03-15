@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2022-03-14 20:48:41
- * @LastEditTime: 2022-03-15 11:00:28
+ * @LastEditTime: 2022-03-15 11:16:37
  * @LastEditors: saber
  * @Description: 
  */
@@ -23,6 +23,19 @@ interface VuesaxThemeOptions {
   [key: string]: any
 }
 export const vuesaxTheme: Theme<VuesaxThemeOptions> = ({ themePlugins = {}, ...localeOptions }, app) => {
+  if (app.options.bundler.endsWith('vite')) {
+    // eslint-disable-next-line import/no-extraneous-dependencies
+    app.options.bundlerConfig.viteOptions = require('vite').mergeConfig(
+      app.options.bundlerConfig.viteOptions,
+      {
+        css: {
+          preprocessorOptions: {
+            scss: { charset: false },
+          },
+        },
+      }
+    )
+  }
   return {
     name: "vuepress2-theme-vuesax",
     layouts: path.resolve(__dirname, '../client/layouts'),
