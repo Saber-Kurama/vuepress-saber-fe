@@ -35,7 +35,7 @@
   border-radius: 5px;
 }
 ::selection {
-  background: alpha(#2564ff, 0.15);
+  background: getColor(#2564ff, 0.15);
 }
 .all-transition {
   * {
