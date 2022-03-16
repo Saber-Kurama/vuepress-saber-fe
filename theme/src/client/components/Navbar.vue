@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import SidebarButton from "./SidebarButton.vue";
-import NavLinks from './NavLinks.vue';
+import NavLinks from "./NavLinks.vue";
 // import SvgRouter from './logo.svg';
 </script>
 <template>
   <header class="navbar">
     <SidebarButton></SidebarButton>
-    <router-link to="x">
+    <router-link to="x" class="home-link">
       <svg
         class="logo-nav"
         xmlns="http://www.w3.org/2000/svg"
@@ -72,64 +72,65 @@ import NavLinks from './NavLinks.vue';
 @import "../styles/variables";
 $navbar-vertical-padding: 0.7rem;
 $navbar-horizontal-padding: 1.5rem;
-.user-info{
+.user-info {
   position: relative;
-  margin-left :10px;
-  .user-dropdown{
+  margin-left: 10px;
+  .user-dropdown {
     display: flex;
     align-items: center;
     justify-content: center;
     padding-right: 10px;
-    &:hover{
-      .dropdown{
-        opacity :1;
+    &:hover {
+      .dropdown {
+        opacity: 1;
         visibility: visible;
       }
     }
-    .dropdown{
+    .dropdown {
       width: 160px;
-      visibility :hidden;
+      visibility: hidden;
       opacity: 0;
-      position :absolute;
+      position: absolute;
       right: 10px;
-      bottom :0px;
-      transform :translate(0,100%);
-      box-shadow :0px 10px 20px -10px rgba(0,0,0,.15);
-      transition:all .25s ease;
-      .dropdown-content{
+      bottom: 0px;
+      transform: translate(0, 100%);
+      box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.15);
+      transition: all 0.25s ease;
+      .dropdown-content {
         width: 160px;
         border-radius: 15px 5px 15px 15px;
-        padding :10px;
+        padding: 10px;
         background: var(--vs-theme-layout);
-        margin-top :15px;
-        position :relative;
+        margin-top: 15px;
+        position: relative;
       }
-      .name-user{
-        border-bottom :1px solid var(--vs-theme-bg2);
-        margin-bottom :10px;
-        width :100%;
-        padding :5px 10px;
+      .name-user {
+        border-bottom: 1px solid var(--vs-theme-bg2);
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 5px 10px;
         padding-top: 0px;
-        font-size :.8rem;
-        text-align :center;
+        font-size: 0.8rem;
+        text-align: center;
       }
-      .logout{
+      .logout {
         background: var(--vs-theme-color);
         color: var(--vs-theme-layout);
-        border :0px;
-        padding :8px 25px;
+        border: 0px;
+        padding: 8px 25px;
         border-radius: 10px;
-        transition :all .25s ease;
-        box-shadow :0px 0px 0px 0px var(--vs-theme-color);
-        width :100%;
-      }
-        &:hover{
-          box-shadow :0px 5px 15px -5px var(--vs-theme-color);
-          transform :translate(0,-4px);
+        transition: all 0.25s ease;
+        box-shadow: 0px 0px 0px 0px var(--vs-theme-color);
+        width: 100%;
+
+        &:hover {
+          box-shadow: 0px 5px 15px -5px var(--vs-theme-color);
+          transform: translate(0, -4px);
         }
+      }
     }
-    .user{
-      img{
+    .user {
+      img {
         width: 40px;
         border-radius: 30%;
       }
@@ -138,16 +139,16 @@ $navbar-horizontal-padding: 1.5rem;
   .btn-login {
     background: var(--vs-theme-color);
     color: var(--vs-theme-layout);
-    border :0px;
+    border: 0px;
     padding: 10px 15px;
     border-radius: 10px 10px 20px 10px;
     margin-right: 10px;
     padding-right: 17px;
-    transition :all .25s ease;
-    box-shadow :0px 0px 0px 0px var(--vs-theme-color);
-    &:hover{
+    transition: all 0.25s ease;
+    box-shadow: 0px 0px 0px 0px var(--vs-theme-color);
+    &:hover {
       box-shadow: 0px 5px 15px -5px var(--vs-theme-color);
-      transform :translate(0,-4px);
+      transform: translate(0, -4px);
     }
   }
 }
@@ -266,6 +267,56 @@ $navbar-horizontal-padding: 1.5rem;
     position: relative;
     padding-left: 0px;
     padding-right: 20px;
+  }
+}
+@media (max-width: 1000px) {
+  .navbar {
+    padding: 9px;
+    padding-top: 8px;
+    padding-left: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    .home-link {
+      position: relative;
+      padding-left: 0px;
+      margin-left: 25px;
+    }
+    .external-links-search {
+      position: relative;
+      padding-left: 0px;
+      right: 0px;
+    }
+    .can-hide {
+      display: none;
+    }
+    .links {
+      padding-left: 1.5rem;
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .home-link {
+    width: 24px !important;
+    overflow: hidden;
+    padding: 0px;
+    margin-top: 3px;
+    .logo-nav {
+      height: 24px;
+    }
+  }
+  .user-info {
+    .btn-login {
+      margin-right: 0px;
+    }
+  }
+}
+@media (max-width: 390px) {
+  .external-links-search {
+    .con-links {
+      display: none;
+    }
   }
 }
 </style>
