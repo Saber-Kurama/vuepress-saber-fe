@@ -38,7 +38,7 @@ onUnmounted(() => {
       class="sidebar-mask"
     ></div>
     <Home v-if="frontmatter.home" ></Home>
-    <Content />
-    {{frontmatter.home || 'ss'}}
+    <!-- <Content />
+    {{frontmatter.home || 'ss'}} -->
   </div>
 </template>

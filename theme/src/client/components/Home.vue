@@ -8,6 +8,7 @@ import Patrons from './HomePatrons.vue';
 import Illustration1 from './HomeIllustration1.vue'
 import Illustration2 from './HomeIllustration2.vue'
 import Illustration3 from './HomeIllustration3.vue'
+import Illustration4 from './HomeIllustration4.vue'
 import Uses from "./HomeUses.vue";
 
 const siteLocale = useSiteLocaleData();
@@ -102,6 +103,7 @@ const time = (val) => {};
     <Illustration2 :data="frontmatter.value?.features[0] || []" />
     <Uses />
     <Illustration3 :data="frontmatter.value?.features[0] || []" />
+    <Illustration4 :data="frontmatter.value?.features[0] || []" />
   </main>
 </template>
 <style lang="scss">

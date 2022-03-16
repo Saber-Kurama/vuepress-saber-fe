@@ -4,12 +4,12 @@ const props = withDefaults(defineProps<{ data: any }>(), { data: {} });
 <template>
   <div class="content-i">
     <div class="con-text">
-      <h2 v-html="data.title" />
+      <h2 v-html="props.data.title" />
 
-      <p v-html="data.details" />
+      <p v-html="props.data.details" />
 
-      <button @click="$router.push(data.action)" class="btn-action">
-        {{ data.actionText }}
+      <button @click="$router.push(props.data.action)" class="btn-action">
+        {{ props.data.actionText }}
       </button>
     </div>
     <div class="con-ilus">
