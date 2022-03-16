@@ -3,15 +3,16 @@ import { usePageFrontmatter, useSiteLocaleData } from "@vuepress/client";
 import { computed, ref } from "vue";
 import type { DefaultThemePageFrontmatter } from "../../shared";
 import NavLink from "./NavLink.vue";
-import Components from './HomeComponents.vue';
-import Patrons from './HomePatrons.vue';
-import Illustration1 from './HomeIllustration1.vue'
-import Illustration2 from './HomeIllustration2.vue'
-import Illustration3 from './HomeIllustration3.vue'
-import Illustration4 from './HomeIllustration4.vue'
+import Components from "./HomeComponents.vue";
+import Patrons from "./HomePatrons.vue";
+import Illustration1 from "./HomeIllustration1.vue";
+import Illustration2 from "./HomeIllustration2.vue";
+import Illustration3 from "./HomeIllustration3.vue";
+import Illustration4 from "./HomeIllustration4.vue";
 import Uses from "./HomeUses.vue";
 import Twitter from "./HomeTwiter.vue";
-import PremiumThemes from './PremiumThemes.vue';
+import PremiumThemes from "./PremiumThemes.vue";
+import Footer from './Footer.vue';
 
 const siteLocale = useSiteLocaleData();
 const frontmatter = usePageFrontmatter<DefaultThemePageFrontmatter>();
@@ -93,12 +94,14 @@ const time = (val) => {};
           </div>
         </div>
       </header>
-       <Components :class="{
-        'github-hover':github,
-        'discord-hover':discord,
-        'vuesax-hover':vuesax,
-        'btn-hover': expand,
-        }" />
+      <Components
+        :class="{
+          'github-hover': github,
+          'discord-hover': discord,
+          'vuesax-hover': vuesax,
+          'btn-hover': expand,
+        }"
+      />
     </div>
     <Patrons />
     <Illustration1 :data="frontmatter.value?.features[0] || []" />
@@ -107,11 +110,34 @@ const time = (val) => {};
     <Illustration3 :data="frontmatter.value?.features[0] || []" />
     <Illustration4 :data="frontmatter.value?.features[0] || []" />
     <Twitter />
-     <PremiumThemes :data="frontmatter.value?.premiumThemes || {}" />
+    <PremiumThemes :data="frontmatter.value?.premiumThemes || {}" />
+    <!-- <div
+      class="features"
+      v-if="data.features && data.features.length"
+    >
+      <div
+        class="feature"
+        v-for="(feature, index) in data.features"
+        :key="index"
+      >
+        <h2>{{ feature.title }}</h2>
+        <p>{{ feature.details }}</p>
+      </div>
+    </div>
+
+    <Content class="custom"/> -->
+
+    <!-- <div
+      class="footer"
+      v-if="data.footer"
+    >
+      {{ data.footer }}
+    </div> -->
+    <Footer :data="frontmatter.value?.suscribe" />
   </main>
 </template>
 <style lang="scss">
-@import '../styles/variables';
+@import "../styles/variables";
 
 @function getColor($colorx, $alpha: 1) {
   @return unquote("rgba(var(--vs-" + $colorx + "), " + $alpha + ")");
