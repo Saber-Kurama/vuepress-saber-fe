@@ -5,6 +5,7 @@ import type { DefaultThemePageFrontmatter } from "../../shared";
 import NavLink from "./NavLink.vue";
 import Components from './HomeComponents.vue';
 import Patrons from './HomePatrons.vue';
+import Illustration1 from './HomeIllustration1.vue'
 
 const siteLocale = useSiteLocaleData();
 const frontmatter = usePageFrontmatter<DefaultThemePageFrontmatter>();
@@ -94,6 +95,7 @@ const time = (val) => {};
         }" />
     </div>
     <Patrons />
+    <Illustration1 :data="frontmatter.value?.features[0] || []" />
   </main>
 </template>
 <style lang="scss">
