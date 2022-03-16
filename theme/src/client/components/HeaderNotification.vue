@@ -28,12 +28,12 @@ onMounted(() => {
         <i class="bx bxs-megaphone"></i>
       </div>
       <div class="text-n">
-        <h3>New component <b>Card</b> 🎉</h3>
-        <p>See the examples and the new documentation</p>
+        <h3> 查看最新动态<b>组件开发</b> 🎉</h3>
+        <!-- <p>See the examples and the new documentation</p> -->
       </div>
     </div>
     <div class="con-btn-n">
-      <button class="btn-info" @click="handleClick">👉 More information</button>
+      <!-- <button class="btn-info" @click="handleClick">👉 More information</button> -->
       <button @click="handleRemove" class="btn-x">
         <i class="bx bx-x"></i>
       </button>
@@ -122,6 +122,10 @@ onMounted(() => {
         padding: 0px;
         width: 30px;
         height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
       }
       &:hover {
         background: rgba(0, 0, 0, 0.3);

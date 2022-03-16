@@ -11,6 +11,20 @@ import type { DefaultThemeOptions } from "vuepress";
 import svgLoader from 'vite-svg-loader';
 
 console.log('__dirname', __dirname)
+function getNavbar (lang = '/') {
+  return {
+    nav: [
+      {
+        text: '设计',
+        link: `docs/guide/`,
+      },
+      {
+        text: '设计',
+        link: `docs/guide/`,
+      }
+    ]
+  }
+}
 export default defineUserConfig({
   // 站点配置
   lang: "zh-CN",
@@ -26,6 +40,11 @@ export default defineUserConfig({
   // theme: '@vuepress/theme-default',
   themeConfig: {
     logo: 'https://vuejs.org/images/logo.png',
+    locales:{
+      '/': {
+        ...getNavbar(),
+      }
+    }
   },
   bundler: '@vuepress/vite',
   bundlerConfig: {

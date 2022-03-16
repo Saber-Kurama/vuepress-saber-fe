@@ -13,6 +13,9 @@ import NavLink from "./NavLink.vue";
 const routeLocale = useRouteLocale();
 const siteLocale = useSiteLocaleData();
 const themeLocale = useThemeLocaleData();
+console.log('routeLocale', routeLocale.value)
+console.log('siteLocale', siteLocale.value);
+console.log('themeLocale', themeLocale.value)
 const userNav = computed(() => {
   return (themeLocale.value.nav || [
     {
