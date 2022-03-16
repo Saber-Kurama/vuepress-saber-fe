@@ -42,3 +42,34 @@ onUnmounted(() => {
     {{frontmatter.home || 'ss'}} -->
   </div>
 </template>
+<style lang="scss">
+.fade-code-enter-active,
+.fade-code-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-code-enter,
+.fade-code-leave-to {
+  opacity: 0;
+}
+.darken {
+  .con-codesandbox {
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+.con-codesandbox {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100001;
+  top: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .con-iframe {
+    max-width: 1200px;
+    width: 100%;
+  }
+}
+</style>

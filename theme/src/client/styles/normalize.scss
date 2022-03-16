@@ -1,4 +1,17 @@
 @import '_variables';
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  display: block;
+  background: getVar(theme-layout);
+}
+*::-webkit-scrollbar-thumb {
+  background: getVar(theme-color);
+  border-radius: 5px;
+}
+::selection {
+  background: alpha(#2564ff, 0.15);
+}
 html,
 body {
   padding: 0;

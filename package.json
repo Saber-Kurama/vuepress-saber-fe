@@ -14,7 +14,7 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "sc": "stylus-conver -d yes -i stylus/vue -o stylus/vue-scss"
+    "sc": "stylus-conver -d yes -p no -i stylus/vue -o stylus/vue-scss"
   },
   "devDependencies": {
     "vite-svg-loader": "^3.1.2",

@@ -60,6 +60,7 @@ const repoLink = computed(() => {
   </nav>
 </template>
 <style lang="scss">
+@import "../styles/variables";
 @function getVar($var) {
   @return unquote("var(--vs-" + $var + ")");
 }
