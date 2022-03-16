@@ -1,12 +1,24 @@
-<script setup lang="ts">
-import { ref } from "vue";
-const isOpenSidebar = ref(false);
-</script>
 <template>
-  <button :class="{ openSidebar: isOpenSidebar }" class="sidebar-button">
+  <button
+    :class="{ openSidebar: isOpenSidebar }"
+    class="sidebar-button"
+    @click="$emit('toggle-sidebar')"
+  >
     <i class="bx bx-menu"></i>
   </button>
 </template>
+
+<script>
+export default {
+  props: ["openSidebar"],
+  computed: {
+    isOpenSidebar() {
+      return this.$parent.isSidebarOpen;
+    },
+  },
+};
+</script>
+
 <style lang="scss">
 @function getColor($vsColor, $alpha: 1) {
   @return unquote("rgba(var(--vs-" + $vsColor + "), " + $alpha + ")");
@@ -33,7 +45,7 @@ const isOpenSidebar = ref(false);
   box-shadow: none;
   border: 0px;
   transition: all 0.25s ease;
-  color: rgba(var(--vs-theme-color), 1) !important;
+  color: getColor("theme-color") !important;
   &:focus {
     outline: 0;
   }
@@ -42,6 +54,7 @@ const isOpenSidebar = ref(false);
     font-size: 1.8rem;
   }
 }
+
 @media (max-width: 1000px) {
   .sidebar-button {
     display: block;

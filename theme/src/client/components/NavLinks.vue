@@ -60,6 +60,9 @@ const repoLink = computed(() => {
   </nav>
 </template>
 <style lang="scss">
+@function getVar($var) {
+  @return unquote("var(--vs-" + $var + ")");
+}
 .nav-links {
   display: flex;
   align-items: center;
@@ -110,6 +113,23 @@ const repoLink = computed(() => {
   }
   .repo-link {
     margin-left: 1.5rem;
+  }
+}
+@media (max-width: $MQMobile) {
+  .nav-links {
+    .nav-item,
+    .repo-link {
+      margin-left: 0;
+    }
+  }
+}
+
+@media (min-width: $MQMobile) {
+  .nav-links a {
+    &:hover,
+    &.router-link-active {
+      color: getVar(theme-color);
+    }
   }
 }
 </style>
