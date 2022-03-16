@@ -6596,6 +6596,11 @@ vue-demi@*:
   resolved "https://registry.npmmirror.com/vue-demi/-/vue-demi-0.12.1.tgz#f7e18efbecffd11ab069d1472d7a06e319b4174c"
   integrity sha512-QL3ny+wX8c6Xm1/EZylbgzdoDolye+VpCXRhI2hug9dJTP3OUJ3lmiKN3CsVV3mOJKwFi0nsstbgob0vG7aoIw==
 
+vue-router@^3.3.4:
+  version "3.5.3"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.5.3.tgz#041048053e336829d05dafacf6a8fb669a2e7999"
+  integrity sha512-FUlILrW3DGitS2h+Xaw8aRNvGTwtuaxrRkNSHWTizOfLUie7wuYwezeZ50iflRn8YPV5kxmU2LQuu3nM/b3Zsg==
+
 vue-router@^4.0.12:
   version "4.0.14"
   resolved "https://registry.npmmirror.com/vue-router/-/vue-router-4.0.14.tgz#ce2028c1c5c33e30c7287950c973f397fce1bd65"
@@ -6630,6 +6635,20 @@ vuepress@^2.0.0-beta.36:
   integrity sha512-EObFjxn91cMRZ+9cgDGjKaTHaCH4NChMqUIGRnPTrIlJfKa4eX4aS0GzPtHSy+L1fKgNnDyUq67fW8q3hrHVjA==
   dependencies:
     vuepress-vite "2.0.0-beta.36"
+
+vuesax3@^4.0.13:
+  version "4.0.13"
+  resolved "https://registry.yarnpkg.com/vuesax3/-/vuesax3-4.0.13.tgz#01e0dd741488c6174fc7d1b42def234616b87eb2"
+  integrity sha512-jqMPo/cjPZqdfsmDXY72uR1b50QLv3QHMTlrk1ylhMia0Hpu+ZxliOOczGsus2tF3+JjJJCaRQohNpoGFlxLNQ==
+  dependencies:
+    chalk "^4.1.2"
+
+vuesax@^4.0.1-alpha.25:
+  version "4.0.1-alpha.25"
+  resolved "https://registry.yarnpkg.com/vuesax/-/vuesax-4.0.1-alpha.25.tgz#2fb97ac8e4f3d479622d2dc6b498e5e57d44495d"
+  integrity sha512-cVLpKsem/YsMSbiy2s2M0O6rr8wrakOUFn0JYxtVQ1WgbVUD0/kU2/GMPVeRBNOh+30tRy2TKreFmjqc53vIBQ==
+  dependencies:
+    vue-router "^3.3.4"
 
 warning@^4.0.1:
   version "4.0.3"

@@ -3,6 +3,7 @@ import { usePageFrontmatter, useSiteLocaleData } from "@vuepress/client";
 import { computed, ref } from "vue";
 import type { DefaultThemePageFrontmatter } from "../../shared";
 import NavLink from "./NavLink.vue";
+import Components from './HomeComponents.vue'
 
 const siteLocale = useSiteLocaleData();
 const frontmatter = usePageFrontmatter<DefaultThemePageFrontmatter>();
@@ -84,10 +85,18 @@ const time = (val) => {};
           </div>
         </div>
       </header>
+       <Components :class="{
+        'github-hover':github,
+        'discord-hover':discord,
+        'vuesax-hover':vuesax,
+        'btn-hover': expand,
+        }" />
     </div>
   </main>
 </template>
 <style lang="scss">
+@import '../styles/variables';
+
 @function getColor($colorx, $alpha: 1) {
   @return unquote("rgba(var(--vs-" + $colorx + "), " + $alpha + ")");
 }
@@ -378,6 +387,224 @@ const time = (val) => {};
     p {
       color: var(--vs-theme-color);
       opacity: 0.7;
+    }
+  }
+}
+@media (max-width: $MQMobile) {
+  .home {
+    .features {
+      flex-direction: column;
+    }
+    .feature {
+      max-width: 100%;
+      padding: 0 2.5rem;
+    }
+  }
+}
+
+@media (max-width: $MQMobileNarrow) {
+  .home {
+    .hero {
+      img {
+        max-height: 210px;
+        margin: 2rem auto 1.2rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      h1,
+      .description,
+      .action {
+        margin: 1.2rem auto;
+      }
+      .description {
+        font-size: 1.2rem;
+      }
+      .action-button {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+      }
+    }
+    .feature {
+      h2 {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .home {
+    .content-i {
+      padding: 100px 30px;
+      .con-text {
+        padding-left: 0px;
+      }
+      .con-ilus {
+        height: auto;
+        padding-right: 20px;
+        width: 50%;
+        svg {
+          height: auto;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1150px) {
+  .home {
+    .hero {
+      width: 60%;
+      justify-content: flex-start;
+      .content-hero {
+        padding: 20px;
+        padding-right: 30px;
+        .description {
+          font-size: 0.95rem;
+        }
+        #main-title {
+          font-size: 2rem !important;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1000px) {
+  .home {
+    .content-i {
+      .con-text {
+        h2 {
+          font-size: 1.5rem;
+        }
+        p {
+          font-size: 0.9rem;
+        }
+        .btn-action {
+          padding: 7px 15px;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 960px) {
+  .home {
+    .hero {
+      width: 100%;
+      align-items: center;
+      .content-hero {
+        width: 100%;
+        align-items: center;
+        padding-top: 0px;
+        #main-title {
+          margin-top: 0px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 800px) {
+  .home {
+    .content-i {
+      position: relative;
+      justify-content: flex-start;
+      .con-text {
+        width: 60%;
+        z-index: 300;
+      }
+      .con-ilus {
+        position: absolute;
+        width: 50%;
+        top: 40px;
+        right: 0px;
+      }
+    }
+  }
+}
+
+@media (max-width: 670px) {
+  .home {
+    min-height: auto;
+    .content-i {
+      position: relative;
+      justify-content: flex-start;
+      padding: 40px 20px;
+      flex-direction: column;
+      .con-text {
+        width: 90%;
+        z-index: 300;
+      }
+      .con-ilus {
+        position: relative;
+        width: 100%;
+        max-width: none;
+        opacity: 1;
+        order: -1;
+        top: 0px;
+        padding: 10px !important;
+      }
+    }
+  }
+}
+@media (max-width: 550px) {
+  .init {
+    min-height: auto;
+  }
+  .home {
+    .hero {
+      z-index: 120;
+      .circle-init {
+        display: none;
+      }
+      .points-init {
+        z-index: -1;
+      }
+      .description {
+        text-align: center;
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .home {
+    .content-i {
+      .con-text {
+        width: 100%;
+        h2 {
+          font-size: 1.2rem;
+        }
+        p {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 470px) {
+  .home {
+    .hero {
+      padding: 10px;
+      .content-hero {
+        z-index: 1000;
+        padding-right: 15px !important;
+        #main-title {
+          font-size: 1.8rem !important;
+        }
+      }
+    }
+  }
+  .con-btns {
+    flex-wrap: wrap;
+    width: 100%;
+    a {
+      width: calc(50% - 20px);
+      margin: 10px;
+      text-align: center;
+      &:first-child {
+        width: calc(100% - 30px);
+      }
     }
   }
 }
