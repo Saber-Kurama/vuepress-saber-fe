@@ -7,6 +7,7 @@ import Components from './HomeComponents.vue';
 import Patrons from './HomePatrons.vue';
 import Illustration1 from './HomeIllustration1.vue'
 import Illustration2 from './HomeIllustration2.vue'
+import Illustration3 from './HomeIllustration3.vue'
 
 const siteLocale = useSiteLocaleData();
 const frontmatter = usePageFrontmatter<DefaultThemePageFrontmatter>();
@@ -98,6 +99,7 @@ const time = (val) => {};
     <Patrons />
     <Illustration1 :data="frontmatter.value?.features[0] || []" />
     <Illustration2 :data="frontmatter.value?.features[0] || []" />
+    <Illustration3 :data="frontmatter.value?.features[0] || []" />
   </main>
 </template>
 <style lang="scss">
