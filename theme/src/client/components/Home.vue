@@ -3,7 +3,8 @@ import { usePageFrontmatter, useSiteLocaleData } from "@vuepress/client";
 import { computed, ref } from "vue";
 import type { DefaultThemePageFrontmatter } from "../../shared";
 import NavLink from "./NavLink.vue";
-import Components from './HomeComponents.vue'
+import Components from './HomeComponents.vue';
+import Patrons from './HomePatrons.vue';
 
 const siteLocale = useSiteLocaleData();
 const frontmatter = usePageFrontmatter<DefaultThemePageFrontmatter>();
@@ -92,6 +93,7 @@ const time = (val) => {};
         'btn-hover': expand,
         }" />
     </div>
+    <Patrons />
   </main>
 </template>
 <style lang="scss">
