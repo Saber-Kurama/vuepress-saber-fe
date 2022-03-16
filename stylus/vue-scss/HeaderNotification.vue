@@ -1,29 +1,6 @@
-<script lang="ts" setup>
-import { onMounted, ref } from "vue";
-import { useRouter, useRoute } from "vue-router";
-
-const router = useRouter();
-const active = ref(0);
-const number = ref(12);
-const handleClick = () => {
-  // router.push('/docs/components/Card')
-  active.value = 0;
-  // localStorage
-};
-const handleRemove = () => {
-  active.value = 0;
-};
-onMounted(() => {
-  if (localStorage.notificationHidden == number.value) {
-    active.value = 0;
-  } else {
-    active.value = number.value;
-  }
-});
-</script>
 <template>
   <div v-if="active == number" class="header-notification">
-    <div class="con-text-n">
+    <div @click="handleClick" class="con-text-n">
       <div class="icon-n">
         <i class="bx bxs-megaphone"></i>
       </div>
@@ -40,16 +17,42 @@ onMounted(() => {
     </div>
   </div>
 </template>
+<script>
+export default {
+  data: () => ({
+    active: 0,
+    number: 12,
+  }),
+  methods: {
+    handleClick() {
+      this.$router.push("/docs/components/Card");
+      this.active = 0;
+
+      localStorage.notificationHidden = this.number;
+    },
+    handleRemove() {
+      this.active = 0;
+      localStorage.notificationHidden = this.number;
+    },
+  },
+  mounted() {
+    if (localStorage.notificationHidden == this.number) {
+      this.active = 0;
+    } else {
+      this.active = this.number;
+    }
+  },
+};
+</script>
 <style lang="scss">
 @function getVar($var) {
   @return unquote("var(--vs-" + $var + ")");
 }
-
 .header-notification {
   width: 100%;
   position: fixed;
   height: 40px;
-  background: var(--vs-theme-bg2);
+  background: getVar(theme-bg2);
   z-index: 10000;
   display: flex;
   align-items: center;
@@ -76,7 +79,7 @@ onMounted(() => {
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--vs-theme-color);
+      color: getVar(theme-color);
       background: rgba(0, 0, 0, 0.05);
       margin-right: 20px;
       transition: all 0.25s ease;
@@ -86,7 +89,7 @@ onMounted(() => {
         margin: 0px;
         padding: 0px;
         font-size: 0.7rem;
-        color: var(--vs-theme-color);
+        color: getVar(theme-color);
         font-weight: normal;
         b {
           text-decoration: underline;
@@ -97,7 +100,7 @@ onMounted(() => {
         margin: 0px;
         padding: 0px;
         font-size: 0.55rem;
-        color: var(--vs-theme-color);
+        color: getVar(theme-color);
       }
     }
   }
@@ -111,7 +114,7 @@ onMounted(() => {
       border-radius: 20px;
       border: 0px;
       background: transparent;
-      color: var(--vs-theme-color);
+      color: getVar(theme-color);
       font-size: 0.65rem;
       background: rgba(0, 0, 0, 0.05);
       transition: all 0.25s ease;
@@ -128,13 +131,19 @@ onMounted(() => {
       }
     }
   }
-  ~ .navbar:not(.fixed) {
-    top: 40px !important;
-    ~ .page {
-      margin-top: 97px;
-    }
-    ~ .siderbar {
-      top: 97px;
+  ~ {
+    .navbar:not(.fixed) {
+      top: 40px !important;
+      ~ {
+        .page {
+          margin-top: 97px;
+        }
+      }
+      ~ {
+        .sidebar {
+          top: 97px;
+        }
+      }
     }
   }
 }
