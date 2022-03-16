@@ -11,6 +11,7 @@ import Illustration3 from './HomeIllustration3.vue'
 import Illustration4 from './HomeIllustration4.vue'
 import Uses from "./HomeUses.vue";
 import Twitter from "./HomeTwiter.vue";
+import PremiumThemes from './PremiumThemes.vue';
 
 const siteLocale = useSiteLocaleData();
 const frontmatter = usePageFrontmatter<DefaultThemePageFrontmatter>();
@@ -106,6 +107,7 @@ const time = (val) => {};
     <Illustration3 :data="frontmatter.value?.features[0] || []" />
     <Illustration4 :data="frontmatter.value?.features[0] || []" />
     <Twitter />
+     <PremiumThemes :data="frontmatter.value?.premiumThemes || {}" />
   </main>
 </template>
 <style lang="scss">

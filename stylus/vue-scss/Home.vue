@@ -1,5 +1,6 @@
 <template>
   <main class="home" aria-labelledby="main-title">
+
     <!-- <Adsense
       data-ad-client="ca-pub-4283907298344887"
       data-ad-slot="4634073296">
@@ -7,27 +8,21 @@
     <div class="init">
       <header class="hero">
         <div class="points-init">
-          <span v-for="span in 16" :key="span"></span>
+          <span
+            v-for="span in 16"
+            :key="span"
+          ></span>
         </div>
         <div class="circle-init"></div>
         <div class="content-hero">
-          <h1
-            v-if="data.heroText !== null"
-            v-html="data.heroText || $title || 'Hello'"
-            id="main-title"
-          />
+          <h1 v-if="data.heroText !== null" v-html="data.heroText || $title || 'Hello'" id="main-title" />
 
-          <p
-            v-html="
-              data.tagline || $description || 'Welcome to your VuePress site'
-            "
-            class="description"
-          />
+          <p v-html="data.tagline || $description || 'Welcome to your VuePress site'" class="description" />
 
           <div class="con-btns">
             <NavLink
               @mouseleave.native="time('vuesax')"
-              @mouseenter.native="(vuesax = true), (expand = true)"
+              @mouseenter.native="vuesax = true, expand = true"
               title="Get Started"
               class="action-button"
               :item="actionLink"
@@ -35,25 +30,17 @@
 
             <a
               @mouseleave="time('discord')"
-              @mouseenter="(discord = true), (expand = true)"
-              title="Discord"
-              class="discord"
-              target="_blank"
-              href="https://discord.gg/6AZNXEa"
-            >
-              <i class="bx bxl-discord"></i>
+              @mouseenter="discord = true, expand = true"
+              title="Discord" class="discord" target="_blank" href="https://discord.gg/6AZNXEa">
+              <i class='bx bxl-discord' ></i>
               Discord
             </a>
 
             <a
               @mouseleave="time('github')"
-              @mouseenter="(github = true), (expand = true)"
-              title="Github"
-              class="github"
-              target="_blank"
-              href="https://github.com/lusaxweb/vuesax"
-            >
-              <i class="bx bxl-github"></i>
+              @mouseenter="github = true, expand = true"
+              title="Github" class="github" target="_blank" href="https://github.com/lusaxweb/vuesax">
+              <i class='bx bxl-github' ></i>
               <span title="Stargazers" class="badge-star">
                 <!-- <i class='bx bxs-star' ></i> -->
                 {{ numberWithCommas }}
@@ -63,14 +50,12 @@
         </div>
       </header>
 
-      <components
-        :class="{
-          'github-hover': github,
-          'discord-hover': discord,
-          'vuesax-hover': vuesax,
-          'btn-hover': expand,
-        }"
-      />
+      <components :class="{
+        'github-hover':github,
+        'discord-hover':discord,
+        'vuesax-hover':vuesax,
+        'btn-hover': expand,
+        }" />
     </div>
     <!-- <home-init>
       <header class="hero">
@@ -116,6 +101,9 @@
     <twitter />
     <Premium-themes :data="data.premiumThemes" />
 
+
+
+
     <!-- <div
       class="features"
       v-if="data.features && data.features.length"
@@ -143,74 +131,61 @@
 </template>
 
 <script>
-import NavLink from "@theme/components/NavLink.vue";
-import Footer from "./Footer.vue";
-import HomeInit from "./homeInit.vue";
-import Illustration1 from "./HomeIllustration1.vue";
-import Illustration2 from "./HomeIllustration2.vue";
-import Illustration3 from "./HomeIllustration3.vue";
-import Illustration4 from "./HomeIllustration4.vue";
-import components from "./HomeComponents.vue";
-import PremiumThemes from "./premiumThemes.vue";
-import Patrons from "./HomePatrons.vue";
-import twitter from "./HomeTwiter.vue";
-import Uses from "./HomeUses.vue";
+import NavLink from '@theme/components/NavLink.vue'
+import Footer from './Footer.vue'
+import HomeInit from './homeInit.vue'
+import Illustration1 from './HomeIllustration1.vue'
+import Illustration2 from './HomeIllustration2.vue'
+import Illustration3 from './HomeIllustration3.vue'
+import Illustration4 from './HomeIllustration4.vue'
+import components from './HomeComponents.vue'
+import PremiumThemes from './premiumThemes.vue'
+import Patrons from './HomePatrons.vue'
+import twitter from './HomeTwiter.vue'
+import Uses from './HomeUses.vue'
 
 export default {
-  components: {
-    NavLink,
-    Footer,
-    HomeInit,
-    Illustration1,
-    Illustration2,
-    Illustration3,
-    Illustration4,
-    Patrons,
-    PremiumThemes,
-    components,
-    twitter,
-    Uses,
-  },
-  data: () => ({
+  components: { NavLink, Footer, HomeInit, Illustration1, Illustration2, Illustration3, Illustration4, Patrons, PremiumThemes, components, twitter, Uses },
+  data:() => ({
     star: 0,
     github: false,
     discord: false,
     vuesax: false,
-    expand: false,
+    expand: false
   }),
   computed: {
-    data() {
-      return this.$page.frontmatter;
+    data () {
+      return this.$page.frontmatter
     },
 
-    actionLink() {
+    actionLink () {
       return {
         link: this.data.actionLink,
-        text: this.data.actionText,
-      };
+        text: this.data.actionText
+      }
     },
     numberWithCommas() {
-      const x = this.star;
-      var parts = x.toString().split(".");
-      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-      return parts.join(".");
-    },
+        const x = this.star
+        var parts = x.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        return parts.join(".");
+    }
   },
 
-  mounted() {
-    fetch("https://api.github.com/repos/lusaxweb/vuesax")
-      .then((response) => response.json())
-      .then((json) => {
-        this.star = json.stargazers_count;
-      });
+  mounted(){
+     fetch('https://api.github.com/repos/lusaxweb/vuesax')
+    .then(response => response.json())
+    .then(json => {
+      this.star = json.stargazers_count
+    })
   },
   methods: {
     time(name) {
-      this.expand = false;
-      this[name] = false;
-    },
-  },
-};
+      this.expand = false
+      this[name] = false
+    }
+  }
+}
 </script>
 
 <style lang="scss">
@@ -219,37 +194,28 @@ export default {
 }
 @function getVar($var) {
   @return unquote("var(--vs-" + $var + ")");
-}
-.darken {
+}.darken {
   .init {
     &:after {
-      background-image: radial-gradient(
-        getVar(theme-bg) 0%,
-        getVar(theme-bg) 30%,
-        transparent 70%
-      );
+      background-image: radial-gradient(getVar(theme-bg) 0%, getVar(theme-bg) 30%, transparent 70%);
     }
-  }
-  .discord {
+  }.discord {
     background: getVar(theme-bg);
     color: #fff !important;
     i {
       color: #fff !important;
     }
-  }
-  .badge-star {
+  }.badge-star {
     background: getVar(theme-bg2);
     color: #fff;
   }
-}
-.init {
+}.init {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   width: 100%;
   height: 100vh;
-  position: relative;
-  .points-init {
+  position: relative;.points-init {
     width: 100px;
     height: 100px;
     top: 200px;
@@ -260,23 +226,22 @@ export default {
     justify-content: center;
     flex-wrap: wrap;
     span {
+
       width: 25px;
       height: 25px;
       display: block;
       transition: all 0.25s ease;
       display: flex;
       align-items: center;
-      justify-content: center;
-      &:hover {
+      justify-content: center;&:hover {
         &:after {
-          background: getColor("primary");
+          background: getColor('primary');
           width: 12px;
           height: 12px;
-          box-shadow: 0px 4px 10px 0px getColor("primary", 0.2);
+          box-shadow: 0px 4px 10px 0px getColor('primary', 0.2);
         }
-      }
-      &:after {
-        content: "";
+      }&:after {
+        content: '';
         position: relative;
         width: 6px;
         height: 6px;
@@ -285,8 +250,7 @@ export default {
         transition: all 0.25s ease;
       }
     }
-  }
-  .circle-init {
+  }.circle-init {
     position: absolute;
     width: 430px;
     height: 430px;
@@ -295,16 +259,13 @@ export default {
     bottom: -80px;
     left: -200px;
     z-index: -1;
-    transition: all 0.25s ease;
-    &:hover {
+    transition: all 0.25s ease;&:hover {
       border: 40px solid getVar(theme-bg2);
     }
-  }
-  .hero {
+  }.hero {
     width: 50%;
   }
-}
-.badge-star {
+}.badge-star {
   position: absolute;
   top: -8px;
   right: -25px;
@@ -318,13 +279,12 @@ export default {
   i {
     font-size: 0.6rem !important;
   }
-}
-.con-btns {
+}.con-btns {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.discord {
+}.discord {
+
   border: 0px;
   padding: 11px 25px;
   margin: 0px 10px;
@@ -336,10 +296,9 @@ export default {
   border-radius: 14px;
 
   transition: all 0.25s ease;
-  font-size: 0.8rem;
-  &:after {
+  font-size: 0.8rem;&:after {
     border-radius: inherit;
-    content: "";
+    content: '';
     position: absolute;
     top: 0px;
     left: 0px;
@@ -350,8 +309,7 @@ export default {
     transition: all 0.25s ease;
     background: transparent;
     box-shadow: 0px 0px 0px 0px getVar(theme-color);
-  }
-  &:hover {
+  }&:hover {
     &:after {
       opacity: 1;
     }
@@ -360,8 +318,7 @@ export default {
     font-size: 1.4rem;
     margin-right: 3px;
   }
-}
-.github {
+}.github {
   padding: 10px 20px;
   margin: 0px 10px;
   font-weight: 600;
@@ -369,15 +326,13 @@ export default {
   align-items: center;
   justify-content: center;
   position: relative;
-  border-radius: 14px;
-  &:hover {
+  border-radius: 14px;&:hover {
     &:after {
       opacity: 1;
     }
-  }
-  &:after {
+  }&:after {
     border-radius: inherit;
-    content: "";
+    content: '';
     position: absolute;
     top: 0px;
     left: 0px;
@@ -391,23 +346,19 @@ export default {
   }
   i {
     font-size: 1.4rem;
-  }
-  &.github {
+  }&.github {
     padding: 10px;
     margin-left: 0px;
   }
-}
-.logo-vuesax {
+}.logo-vuesax {
   max-width: 260px;
   fill: getVar(theme-color);
-}
-.home {
+}.home {
   margin: 0px auto;
   display: block;
   width: 100%;
   overflow: hidden;
-  background: getVar(theme-layout);
-  ~ .config {
+  background: getVar(theme-layout);~ .config {
     left: 0px;
   }
   #main-title {
@@ -416,15 +367,13 @@ export default {
     a {
       text-decoration: underline;
     }
-  }
-  .hero {
+  }.hero {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 800px;
     padding-top: 60px;
-    padding: 20px;
-    .content-hero {
+    padding: 20px;.content-hero {
       display: flex;
       align-items: flex-start;
       justify-content: center;
@@ -442,41 +391,35 @@ export default {
       text-align: left;
       margin-bottom: 15px;
     }
-    h1,
-    .description,
-    .action {
+    h1, .description, .action {
       text-align: left;
-    }
-    .description {
+    }.description {
       max-width: 35rem;
       font-size: 1.1rem;
       line-height: 1.3;
       color: getVar(theme-color);
       opacity: 0.6;
       margin-top: 0px;
-    }
-    .action-button {
+    }.action-button {
       display: inline-block;
       font-size: 0.8rem;
       color: #fff !important;
 
-      background: getColor("primary");
+      background: getColor('primary');
       padding: 13px 25px;
       border-radius: 17px;
       transition: background-color 0.1s ease;
       box-sizing: border-box;
       transition: all 0.25s ease;
-      box-shadow: 0px 10px 20px -10px getColor("primary", 0.5);
+      box-shadow: 0px 10px 20px -10px getColor('primary', 0.5);
       i {
         display: none;
-      }
-      &:hover {
-        box-shadow: 0px 20px 20px -10px getColor("primary", 0.5);
+      }&:hover {
+        box-shadow: 0px 20px 20px -10px getColor('primary', 0.5);
         transform: translate(0, -5px);
       }
     }
-  }
-  .features {
+  }.features {
     padding: 1.2rem 0px;
     margin: auto;
     max-width: 1000px;
@@ -486,8 +429,7 @@ export default {
     align-items: flex-start;
     align-content: stretch;
     justify-content: space-between;
-  }
-  .feature {
+  }.feature {
     flex-grow: 1;
     flex-basis: 30% nav-link action-button;
     max-width: 30%;
@@ -505,12 +447,16 @@ export default {
   }
 }
 
+
+
+
+
+
 @media (max-width: $MQMobile) {
   .home {
     .features {
       flex-direction: column;
-    }
-    .feature {
+    }.feature {
       max-width: 100%;
       padding: 0 2.5rem;
     }
@@ -527,20 +473,15 @@ export default {
       h1 {
         font-size: 2rem;
       }
-      h1,
-      .description,
-      .action {
+      h1, .description, .action {
         margin: 1.2rem auto;
-      }
-      .description {
+      }.description {
         font-size: 1.2rem;
-      }
-      .action-button {
+      }.action-button {
         font-size: 1rem;
         padding: 0.6rem 1.2rem;
       }
-    }
-    .feature {
+    }.feature {
       h2 {
         font-size: 1.25rem;
       }
@@ -551,11 +492,9 @@ export default {
 @media (max-width: 1400px) {
   .home {
     .content-i {
-      padding: 100px 30px;
-      .con-text {
+      padding: 100px 30px;.con-text {
         padding-left: 0px;
-      }
-      .con-ilus {
+      }.con-ilus {
         height: auto;
         padding-right: 20px;
         width: 50%;
@@ -571,11 +510,9 @@ export default {
   .home {
     .hero {
       width: 60%;
-      justify-content: flex-start;
-      .content-hero {
+      justify-content: flex-start;.content-hero {
         padding: 20px;
-        padding-right: 30px;
-        .description {
+        padding-right: 30px;.description {
           font-size: 0.95rem;
         }
         #main-title {
@@ -594,8 +531,7 @@ export default {
         }
         p {
           font-size: 0.9rem;
-        }
-        .btn-action {
+        }.btn-action {
           padding: 7px 15px;
           font-size: 0.9rem;
         }
@@ -607,8 +543,7 @@ export default {
   .home {
     .hero {
       width: 100%;
-      align-items: center;
-      .content-hero {
+      align-items: center;.content-hero {
         width: 100%;
         align-items: center;
         padding-top: 0px;
@@ -624,12 +559,10 @@ export default {
   .home {
     .content-i {
       position: relative;
-      justify-content: flex-start;
-      .con-text {
+      justify-content: flex-start;.con-text {
         width: 60%;
         z-index: 300;
-      }
-      .con-ilus {
+      }.con-ilus {
         position: absolute;
         width: 50%;
         top: 40px;
@@ -641,17 +574,14 @@ export default {
 
 @media (max-width: 670px) {
   .home {
-    min-height: auto;
-    .content-i {
+    min-height: auto;.content-i {
       position: relative;
       justify-content: flex-start;
       padding: 40px 20px;
-      flex-direction: column;
-      .con-text {
+      flex-direction: column;.con-text {
         width: 90%;
         z-index: 300;
-      }
-      .con-ilus {
+      }.con-ilus {
         position: relative;
         width: 100%;
         max-width: none;
@@ -666,17 +596,13 @@ export default {
 @media (max-width: 550px) {
   .init {
     min-height: auto;
-  }
-  .home {
+  }.home {
     .hero {
-      z-index: 120;
-      .circle-init {
+      z-index: 120;.circle-init {
         display: none;
-      }
-      .points-init {
+      }.points-init {
         z-index: -1;
-      }
-      .description {
+      }.description {
         text-align: center;
       }
     }
@@ -700,8 +626,7 @@ export default {
 @media (max-width: 470px) {
   .home {
     .hero {
-      padding: 10px;
-      .content-hero {
+      padding: 10px;.content-hero {
         z-index: 1000;
         padding-right: 15px !important;
         #main-title {
@@ -709,15 +634,13 @@ export default {
         }
       }
     }
-  }
-  .con-btns {
+  }.con-btns {
     flex-wrap: wrap;
     width: 100%;
     a {
       width: calc(50% - 20px);
       margin: 10px;
-      text-align: center;
-      &:first-child {
+      text-align: center;&:first-child {
         width: calc(100% - 30px);
       }
     }
