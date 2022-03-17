@@ -13,84 +13,29 @@ const mousex = ref(0);
 const change = ref(0);
 const moving = ref(false);
 const notScrolling = ref(false);
+// TODO: 最好根据 数据传递
 const twits = ref([
   {
-    name: "Sébastien Chopin",
-    user: "Author of @nuxt_js",
+    name: "saber",
+    user: "saber",
     link: "https://twitter.com/Atinux",
-    text: "I have to say, Vuesax 4 is 😍",
+    text: "",
     img: "https://pbs.twimg.com/profile_images/1042510623962275840/1Iw_Mvud_400x400.jpg",
   },
   {
-    name: "Paurakh Sharma",
-    user: "@PaurakhSharma",
+    name: "陈关印",
+    user: "陈关印",
     link: "https://twitter.com/PaurakhSharma",
-    text: "Awesome news 🎉 Best looking Vue component library 🔥",
-    img: "https://pbs.twimg.com/profile_images/1160037349037768704/dtk4DCfv_400x400.jpg",
+    text: "",
+    img: "https://pbs.twimg.com/profile_images/1042510623962275840/1Iw_Mvud_400x400.jpg",
   },
   {
-    name: "illy",
-    user: "@__illy___",
-    link: "https://twitter.com/__illy___",
-    text: "Create a serverless mobile web application with Vue (ts), <b>Vuesax</b> and Firebase",
-    img: "https://pbs.twimg.com/profile_images/1184434161873870848/9e37ffmP_400x400.jpg",
-  },
-  {
-    name: "lvzy",
-    user: "@lvzy12",
-    link: "https://twitter.com/lvzy12",
-    text: "Vuesax 4.0 UI components are very beautiful, look forward to your continuous updates 😻😻😻",
-    img: "https://pbs.twimg.com/profile_images/1210388192207097857/Xj8nbZKE_400x400.jpg",
-  },
-  {
-    name: "Gusto",
-    user: "@gustojs",
-    link: "https://twitter.com/gustojs",
-    text: `<b>@vuesax</b> is one of more unique UI libraries for <b>@vuejs</b>. Its author <b>@luisdfly</b> would want to focus on the upcoming 4.x release, but with a responsibility to maintain 3.x version, it's not easy. You can help him a lot by taking over some of those tasks.`,
-    img: "https://pbs.twimg.com/profile_images/1169194630241341445/Mwnt1Rqv_400x400.jpg",
-  },
-  {
-    name: "Luis Pedraz",
-    user: "@PedrazL",
-    link: "https://twitter.com/PedrazL",
-    text: `Love the work you do, this looks great. Is this going to be part of <b>@vuesax</b> 4.0 or it's just a stand-alone component`,
-    img: "https://pbs.twimg.com/profile_images/1031481292507033600/7Cg3Oei5_400x400.jpg",
-  },
-  {
-    name: "Sergio Márquez",
-    user: "@Undervane",
-    link: "https://twitter.com/Undervane",
-    text: `I personally like <b>@vuesax</b> , although it's not mature yet, but nothing that could not be resolved by contributing to make it better!`,
-    img: "https://pbs.twimg.com/profile_images/1210437765906812929/_4nXz0Cw_400x400.jpg",
-  },
-  {
-    name: "Stattick",
-    user: "@Stattick_",
-    link: "https://twitter.com/Stattick_",
-    text: `I recently discovered <b>#vuesax</b>, my favorite component library for <b>#VueJS</b> and that is not complete yet.`,
-    img: "https://pbs.twimg.com/profile_images/1089337790456836096/YY7YjWzs_400x400.jpg",
-  },
-  {
-    name: "新井 モノ",
-    user: "@araimonokaiy",
-    link: "https://twitter.com/araimonokaiy",
-    text: "Create modern and modern sites with <b>Vuesax</b>!",
-    img: "https://pbs.twimg.com/profile_images/1167749700667133954/qcnRP65y_400x400.jpg",
-  },
-  {
-    name: "Woterix",
-    user: "@woterix",
-    link: "https://twitter.com/woterix",
-    text: "<b>Vuesax</b> is a library of Vuejs components that facilitates front-end development and streamlines work with great visual quality",
-    img: "https://pbs.twimg.com/profile_images/980674833800286208/SNzLa2L8_400x400.jpg",
-  },
-  {
-    name: "Laravel VueJs",
-    user: "@LaravelVueJs",
-    link: "https://twitter.com/LaravelVueJs",
-    text: "<b>@vuesax</b>: A new awesome component library based on Vue js 2.0",
-    img: "https://pbs.twimg.com/profile_images/1132817919405113345/2nQsnCip_400x400.png",
-  },
+    name: "张凯",
+    user: "张凯",
+    link: "_",
+    text: "",
+    img: "https://pbs.twimg.com/profile_images/1042510623962275840/1Iw_Mvud_400x400.jpg",
+  }
 ]);
 watch(translatex, () => {
   if (translatex.value > 100) {
@@ -252,8 +197,8 @@ const scrollH = (e) => {
   <div class="con-twits">
     <header>
       <h2>
-        <span>Some Words validating</span> <b>Vuesax</b>
-        <span>are oxygen for us Thanks!</span>
+        基于领域模型与团队实践共同打造<b>一站式开发平台</b>，全面提升研发与管理效率<br>
+        适用于多种业务场景，让优秀的团队更优秀
       </h2>
     </header>
 
