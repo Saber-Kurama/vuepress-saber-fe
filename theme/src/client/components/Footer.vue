@@ -2,30 +2,31 @@
 import { ref } from "vue";
 
 const props = withDefaults(defineProps<{ data: any }>(), { data: {} });
+// TODO： 数据来源
 const links = ref([
   {
-    title: "Vuesax",
+    title: "Saber 生态系统",
     items: [
       {
-        text: "What is Vuesax?",
-        link: "/docs/guide/#whats-is-vuesax",
+        text: "Saber Cli - 前端开发脚手架",
+        link: "/docs/guSde/#whats-is-vuesax",
       },
       {
-        text: "Why Vuesax?",
+        text: "Saber Cli - 前端开发脚手架",
         link: "/docs/guide/#why-vuesax",
       },
       {
-        text: "What's new in v4",
+        text: "Saber Cli - 前端开发脚手架",
         link: "/docs/guide/#features",
       },
       {
-        text: "FAQ",
+        text: "Saber Cli - 前端开发脚手架",
         link: "/license/#faq",
       },
     ],
   },
   {
-    title: "Resources",
+    title: "相关资源",
     items: [
       // {
       //   text: 'Blog',
@@ -46,7 +47,7 @@ const links = ref([
     ],
   },
   {
-    title: "Help",
+    title: "帮助",
     items: [
       {
         text: "Github Issues",
@@ -63,7 +64,7 @@ const links = ref([
     ],
   },
   {
-    title: "Community",
+    title: "社区",
     items: [
       {
         text: "Discord",
@@ -103,7 +104,7 @@ const links = ref([
               name="EMAIL"
               class="email"
               id="mce-EMAIL"
-              placeholder="Email"
+              placeholder="请输入订阅邮箱"
               required
             />
             <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
@@ -118,7 +119,7 @@ const links = ref([
             <div class="clear">
               <input
                 type="submit"
-                value="SUSCRIBE!"
+                value="立即订阅"
                 name="subscribe"
                 id="mc-embedded-subscribe"
                 class="button"
@@ -143,10 +144,9 @@ const links = ref([
     </div>
 
     <div class="copy">
-      <span class="span-copy"> Copyright © 2020 Vuesax </span>
+      <span class="span-copy"> Copyright © 2022 Saber </span>
       <span class="span-lusaxweb">
-        <span> Created By </span>
-        <a target="_blank" href="http://lusaxweb.net">Lusaxweb</a>
+       追求卓越，成功就会在不经意间追上你
       </span>
     </div>
   </footer>

@@ -23,6 +23,7 @@ features:
   actionText: 查看体验 
 premiumThemes:
   title: <b>Saber</b> Design Pro
-  details: 企业级中后台前端/设计解决方案，涵盖绝大多数中后台典型场景，最大化地减轻开发者工作量，易于上手并支持多端的响应式能力        
+  details: 企业级中后台前端/设计解决方案，涵盖绝大多数中后台典型场景，最大化地减轻开发者工作量，易于上手并支持多端的响应式能力 
+suscribe: <b>Subscribe</b> to our <br> Weekly Newsletter         
 ---
 sad

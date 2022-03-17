@@ -149,7 +149,7 @@ const time = (name) => {
     >
       {{ data.footer }}
     </div> -->
-    <Footer :data="frontmatter.value?.suscribe" />
+    <Footer :data="frontmatter.suscribe" />
   </main>
 </template>
 <style lang="scss">
