@@ -126,7 +126,7 @@ const time = (name) => {
     <Illustration3 :data="frontmatter.features[2] || []" />
     <Illustration4 :data="frontmatter.features[3] || []" />
     <Twitter />
-    <PremiumThemes :data="frontmatter.value?.premiumThemes || {}" />
+    <PremiumThemes :data="frontmatter.premiumThemes || {}" />
     <!-- <div
       class="features"
       v-if="data.features && data.features.length"

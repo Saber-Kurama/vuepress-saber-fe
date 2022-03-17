@@ -30,7 +30,7 @@ const open = (url) => {
       <p v-html="props.data.details" />
 
       <footer>
-        <vs-button
+        <!-- <vs-button
           active
           @click="
             open(
@@ -38,8 +38,8 @@ const open = (url) => {
             )
           "
         >
-          See more
-        </vs-button>
+          查看更多
+        </vs-button> -->
         <vs-button
           flat
           @click="
@@ -48,7 +48,7 @@ const open = (url) => {
             )
           "
         >
-          Live Demo
+          在线预览
         </vs-button>
       </footer>
     </header>

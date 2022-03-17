@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2022-03-14 21:32:36
- * @LastEditTime: 2022-03-17 17:36:40
+ * @LastEditTime: 2022-03-17 18:32:30
  * @LastEditors: saber
  * @Description: 
  */
@@ -21,6 +21,7 @@ export interface DefaultThemePageFrontmatter {
   actionText?: string
   actionLink?: string
   features?: any[]
+  premiumThemes: any
 }
 
 export interface DefaultThemeHomePageFrontmatter

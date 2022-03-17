@@ -20,6 +20,9 @@ features:
 - title: 中台搭建新思维<b>突破与革新</b>
   details: 基于渐进增强的脚手架创建、开发和管理前端项目，开发调试一体化。通过配套的图形化界面提供所见即所得的『可视化开发』能力，让研发过程规范化、实现低代码开发，助力快速完成前端页面的搭建。
   action: /docs/components/
-  actionText: 查看体验        
+  actionText: 查看体验 
+premiumThemes:
+  title: <b>Saber</b> Design Pro
+  details: 企业级中后台前端/设计解决方案，涵盖绝大多数中后台典型场景，最大化地减轻开发者工作量，易于上手并支持多端的响应式能力        
 ---
 sad
