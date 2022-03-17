@@ -1,24 +1,19 @@
-@import "./config";
-.arrow {
+@import './config';.arrow {
   display: inline-block;
   width: 0;
-  height: 0;
-  &.up {
+  height: 0;&.up {
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
     border-bottom: 6px solid $arrowBgColor;
-  }
-  &.down {
+  }&.down {
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
     border-top: 6px solid $arrowBgColor;
-  }
-  &.right {
+  }&.right {
     border-top: 4px solid transparent;
     border-bottom: 4px solid transparent;
     border-left: 6px solid $arrowBgColor;
-  }
-  &.left {
+  }&.left {
     border-top: 4px solid transparent;
     border-bottom: 4px solid transparent;
     border-right: 6px solid $arrowBgColor;

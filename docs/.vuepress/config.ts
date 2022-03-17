@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2022-03-14 09:59:34
- * @LastEditTime: 2022-03-17 15:45:54
+ * @LastEditTime: 2022-03-17 15:51:07
  * @LastEditors: saber
  * @Description: 
  */
@@ -40,6 +40,10 @@ function getNavbar (lang = '/') {
       },
       {
         text: '生态系统',
+        link: `/docs/guide/`,
+      },
+      {
+        text: '...',
         link: `/docs/guide/`,
       }
 

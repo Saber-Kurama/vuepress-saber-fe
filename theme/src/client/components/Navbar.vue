@@ -1,8 +1,14 @@
 <script setup lang="ts">
 import SidebarButton from "./SidebarButton.vue";
 import NavLinks from "./NavLinks.vue";
+import SearchBox from './SearchBox.vue'; 
 import { onMounted, ref } from "vue";
+import { useThemeLocaleData } from "../composables";
+import { usePageFrontmatter } from "@vuepress/client";
+import { DefaultThemePageFrontmatter } from "../../shared";
 
+const themeLocale = useThemeLocaleData();
+const frontmatter = usePageFrontmatter<DefaultThemePageFrontmatter>();
 const navbarRef = ref();
 const linksWrapMaxWidth = ref();
 const focused = ref(false);
@@ -36,6 +42,7 @@ onMounted(() => {
     })
 })
 
+const handleShowSuggestions = () => {}
 // import SvgRouter from './logo.svg';
 </script>
 <template>
@@ -176,22 +183,28 @@ onMounted(() => {
       <NavLinks class="can-hide" />
     </div>
     <div :class="{'remove-links': focused}" class="external-links-search">
-      <a title="Previous Version" class="v-old" target="_blank"> v3.x </a>
+      <!-- <a title="Previous Version" class="v-old" target="_blank"> v3.x </a> -->
       <div class="con-links">
         <a
           title="Github"
           target="_blank"
-          href="https://github.com/lusaxweb/vuesax-next"
+          href="https://github.com/Saber-Kurama/vuepress-saber-fe"
         >
           <i class="bx bxl-github"></i>
         </a>
-        <a title="Twitter" target="_blank" href="https://twitter.com/vuesax">
+        <!-- <a title="Twitter" target="_blank" href="https://twitter.com/vuesax">
           <i class="bx bxl-twitter"></i>
         </a>
         <a title="Discord" target="_blank" href="https://discord.gg/6AZNXEa">
           <i class="bx bxl-discord"></i>
-        </a>
+        </a> -->
       </div>
+      <!-- v-if="themeLocale.value.search !== false && frontmatter?.search !== false" -->
+      <SearchBox
+        @focus="focused = true"
+        @blur="focused = false"
+        @showSuggestions="handleShowSuggestions"
+        />
        <div class="user-info"></div>
     </div>
   </header>
