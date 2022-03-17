@@ -1,3 +1,10 @@
+/*
+ * @Author: saber
+ * @Date: 2022-03-14 21:32:36
+ * @LastEditTime: 2022-03-17 17:26:39
+ * @LastEditors: saber
+ * @Description: 
+ */
 import type { GitPluginPageData } from '@vuepress/plugin-git'
 import type { NavLink, SidebarConfig } from './nav'
 
@@ -9,6 +16,10 @@ export interface DefaultThemePageFrontmatter {
   home?: boolean
   navbar?: boolean
   pageClass?: string
+  heroText?: string
+  tagline?: string
+  actionText?: string
+  actionLink?: string
 }
 
 export interface DefaultThemeHomePageFrontmatter

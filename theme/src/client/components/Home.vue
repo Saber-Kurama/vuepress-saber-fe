@@ -12,7 +12,7 @@ import Illustration4 from "./HomeIllustration4.vue";
 import Uses from "./HomeUses.vue";
 import Twitter from "./HomeTwiter.vue";
 import PremiumThemes from "./PremiumThemes.vue";
-import Footer from './Footer.vue';
+import Footer from "./Footer.vue";
 
 const siteLocale = useSiteLocaleData();
 const frontmatter = usePageFrontmatter<DefaultThemePageFrontmatter>();
@@ -57,13 +57,13 @@ const time = (val) => {};
             class="description"
           />
           <div class="con-btns">
-            <!-- <NavLink
+            <NavLink
               @mouseleave.native="time('vuesax')"
               @mouseenter.native="(vuesax = true), (expand = true)"
               title="Get Started"
               class="action-button"
               :item="actionLink"
-            /> -->
+            />
 
             <a
               @mouseleave="time('discord')"
@@ -369,6 +369,8 @@ const time = (val) => {};
       font-size: 2.3rem !important;
       text-align: left;
       margin-bottom: 15px;
+      margin-block-start: 0.67em;
+      margin-block-end: 0.67em;
     }
     h1,
     .description,
@@ -382,6 +384,7 @@ const time = (val) => {};
       color: var(--vs-theme-color);
       opacity: 0.6;
       margin-top: 0px;
+      margin-block-end: 1em;
     }
     .action-button {
       display: inline-block;
