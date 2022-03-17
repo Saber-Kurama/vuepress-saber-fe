@@ -1,13 +1,138 @@
 <script setup lang="ts">
 import SidebarButton from "./SidebarButton.vue";
 import NavLinks from "./NavLinks.vue";
+import { onMounted, ref } from "vue";
+
+const navbarRef = ref();
+const linksWrapMaxWidth = ref();
+const focused = ref(false);
+const  css = (el, property) => {
+  // NOTE: Known bug, will return 'auto' if style value is 'auto'
+  const win = el.ownerDocument.defaultView
+  // null means not to return pseudo styles
+  return win.getComputedStyle(el, null)[property]
+}
+onMounted(() => {
+  const MOBILE_DESKTOP_BREAKPOINT = 719;
+  const NAVBAR_VERTICAL_PADDING = parseInt(css(navbarRef.value, 'paddingLeft')) + parseInt(css(navbarRef.value, 'paddingRight'));
+  const handleLinksWrapWidth = () => {
+    // TODO: 这个是还没有完成的吧
+      if (document.documentElement.clientWidth < MOBILE_DESKTOP_BREAKPOINT) {
+        linksWrapMaxWidth.value = null
+      } else {
+        linksWrapMaxWidth.value = navbarRef.value.offsetWidth - NAVBAR_VERTICAL_PADDING
+          // - (this.$refs.siteName && this.$refs.siteName.offsetWidth || 0)
+      }
+    }
+    handleLinksWrapWidth()
+    window.addEventListener('resize', handleLinksWrapWidth, false)
+
+    window.addEventListener('scroll',() => {
+      if(window.pageYOffset > 0) {
+        navbarRef.value.classList.add('fixed')
+      } else {
+        navbarRef.value.classList.remove('fixed')
+      }
+    })
+})
+
 // import SvgRouter from './logo.svg';
 </script>
 <template>
-  <header class="navbar">
+  <header class="navbar" ref="navbarRef">
     <SidebarButton></SidebarButton>
-    <router-link to="x" class="home-link">
+    <router-link to="/" class="home-link">
       <svg
+        class="logo-nav"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 220.000000 58.000000"
+        preserveAspectRatio="xMidYMid meet"
+        color-interpolation-filters="sRGB"
+        style="margin: auto"
+      >
+        <g
+          data-v-2cb57da0=""
+          fill="#fa5d89"
+          class="iconlinesvg-g iconlinesvg"
+          
+          
+        >
+          <g class="tp-name">
+            <g transform="translate(0, 0)">
+              <g data-gra="path-name" fill="#fa5d89" transform="scale(1)">
+                <path
+                  d="M20.88-13.82L20.88-13.82L16.36-14.67Q1.97-17.21 2.54-26.52L2.54-26.52Q3.10-38.37 21.44-38.65L21.44-38.65Q38.93-38.09 39.50-30.47L39.50-30.47Q38.93-26.24 34.70-25.96L34.70-25.96Q32.16-25.96 29.06-27.93L29.06-27.93Q24.83-30.47 21.16-30.47L21.16-30.47Q16.93-30.47 16.93-27.93L16.93-27.93Q16.08-25.67 21.44-24.83L21.44-24.83L27.93-23.42Q40.91-20.60 40.91-12.13L40.91-12.13Q40.34 0 20.60 0.28L20.60 0.28Q2.54 0 2.26-8.18L2.26-8.18Q2.54-12.13 7.62-12.70L7.62-12.70Q9.31-12.70 12.41-10.44L12.41-10.44Q16.65-7.34 20.88-7.34L20.88-7.34Q25.39-7.34 25.67-10.16L25.67-10.16Q25.67-12.70 20.88-13.82Z"
+                  transform="translate(-2.25705329153605, 53.040752351097176)"
+                ></path>
+              </g>
+            </g>
+            <g transform="translate(42, 2.9623824451410705)">
+              <g>
+                <g class="imagesvg">
+                  <g>
+                    <rect
+                      fill="#fa5d89"
+                      fill-opacity="0"
+                      stroke-width="2"
+                      x="0"
+                      y="0"
+                      width="47.39811912225704"
+                      height="47.39811912225704"
+                      class="image-rect"
+                    ></rect>
+                    <svg
+                      x="0"
+                      y="0"
+                      width="47.39811912225704"
+                      height="47.39811912225704"
+                      filtersec="colorsb1002727604"
+                      class="image-svg-svg primary"
+                      style="overflow: visible"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0.6650000214576721 0.6650000214576721 98.46299743652344 98.46299743652344"
+                      >
+                        <path
+                          fill="#488b81"
+                          d="M49.896.665L.665 99.128h98.463L49.896.665zm19.541 57.436H30.356l19.54-39.089 19.541 39.089zM26.25 66.305h47.293l12.31 24.612H13.94l12.31-24.612z"
+                        ></path>
+                      </svg>
+                    </svg>
+                    <!---->
+                  </g>
+                </g>
+              </g>
+            </g>
+            <g transform="translate(93, 0)">
+              <g data-gra="path-name" fill="#fa5d89" transform="scale(1)">
+                <path
+                  d="M3.95-6.21L3.95-6.21L3.95-45.42Q3.95-53.04 11.29-53.04L11.29-53.04Q18.06-53.04 18.34-45.42L18.34-45.42L18.34-33.01L18.62-33.01Q21.72-38.37 29.06-38.65L29.06-38.65Q43.73-37.81 45.42-18.90L45.42-18.90Q44.58 0 28.50 0.28L28.50 0.28Q19.18 0 17.21-5.92L17.21-5.92Q16.93 0 10.72 0.28L10.72 0.28Q3.67 0.28 3.95-6.21ZM18.06-18.90L18.06-18.90Q18.06-9.87 24.26-9.87L24.26-9.87Q30.47-9.87 30.75-18.62L30.75-18.62Q30.47-26.80 23.98-27.08L23.98-27.08Q18.06-26.52 18.06-18.90Z"
+                  transform="translate(-3.9498432601880875, 53.040752351097176)"
+                ></path>
+              </g>
+            </g>
+            <g transform="translate(138, 0)">
+              <g data-gra="path-name" fill="#fa5d89" transform="scale(1)">
+                <path
+                  d="M38.93-15.52L38.93-15.52L17.77-15.52Q18.34-7.62 25.67-7.62L25.67-7.62Q28.21-7.62 32.73-10.16L32.73-10.16Q36.68-12.41 38.93-12.41L38.93-12.41Q42.88-11.85 43.45-7.34L43.45-7.34Q42.60 0 23.98 0.28L23.98 0.28Q3.10 0 2.82-18.90L2.82-18.90Q3.39-37.81 23.98-38.65L23.98-38.65Q43.17-37.81 45.71-21.72L45.71-21.72Q45.71-15.24 38.93-15.52ZM17.77-22.85L17.77-22.85L31.60-22.85Q31.32-29.62 24.83-29.91L24.83-29.91Q18.06-29.62 17.77-22.85Z"
+                  transform="translate(-2.8213166144200623, 53.040752351097176)"
+                ></path>
+              </g>
+            </g>
+            <g transform="translate(184, 0)">
+              <g data-gra="path-name" fill="#fa5d89" transform="scale(1)">
+                <path
+                  d="M3.67-6.49L3.67-6.49L3.67-31.32Q3.67-38.09 10.44-38.65L10.44-38.65Q16.65-38.37 16.93-31.03L16.93-31.03L16.93-28.21L17.21-28.21Q20.88-38.65 26.80-38.65L26.80-38.65Q32.45-38.37 33.01-31.88L33.01-31.88Q32.73-26.52 28.78-25.11L28.78-25.11L24.83-24.26Q18.06-22.85 18.62-16.65L18.62-16.65L18.62-6.49Q18.34 0 11.00 0.28L11.00 0.28Q3.67 0 3.67-6.49Z"
+                  transform="translate(-3.6677115987460813, 53.040752351097176)"
+                ></path>
+              </g>
+            </g>
+          </g>
+          <!---->
+        </g>
+      </svg>
+      <!-- <svg
         class="logo-nav"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 401.69 98.4"
@@ -43,12 +168,14 @@ import NavLinks from "./NavLinks.vue";
             />
           </g>
         </g>
-      </svg>
+      </svg> -->
     </router-link>
-    <div class="links">
+    <div class="links" :style="linksWrapMaxWidth ? {
+        'max-width': linksWrapMaxWidth + 'px'
+      } : {}">
       <NavLinks class="can-hide" />
     </div>
-    <div class="external-links-search">
+    <div :class="{'remove-links': focused}" class="external-links-search">
       <a title="Previous Version" class="v-old" target="_blank"> v3.x </a>
       <div class="con-links">
         <a
@@ -65,6 +192,7 @@ import NavLinks from "./NavLinks.vue";
           <i class="bx bxl-discord"></i>
         </a>
       </div>
+       <div class="user-info"></div>
     </div>
   </header>
 </template>

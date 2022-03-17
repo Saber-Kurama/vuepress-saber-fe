@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2022-03-14 09:59:34
- * @LastEditTime: 2022-03-15 17:42:59
+ * @LastEditTime: 2022-03-17 15:45:54
  * @LastEditors: saber
  * @Description: 
  */
@@ -16,12 +16,33 @@ function getNavbar (lang = '/') {
     nav: [
       {
         text: '设计',
-        link: `docs/guide/`,
+        link: `/docs/guide/`,
       },
       {
-        text: '设计',
-        link: `docs/guide/`,
+        text: '组件',
+        link: `/docs/guide/`,
+      },
+      {
+        text: '指南',
+        link: `/docs/guide/`,
+      },
+      {
+        text: '规范',
+        link: `/docs/guide/`,
+      },
+      {
+        text: '插件',
+        link: `/docs/guide/`,
+      },
+      {
+        text: '物料开发',
+        link: `/docs/guide/`,
+      },
+      {
+        text: '生态系统',
+        link: `/docs/guide/`,
       }
+
     ]
   }
 }
