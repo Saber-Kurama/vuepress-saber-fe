@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2022-03-14 09:59:34
- * @LastEditTime: 2022-03-17 19:47:09
+ * @LastEditTime: 2022-03-17 20:31:06
  * @LastEditors: saber
  * @Description: 
  */
@@ -76,6 +76,7 @@ export default defineUserConfig({
     viteOptions: {
       plugins: []
     }
-  }, 
+  },
+  templateBuild: path.resolve(__dirname, '../../theme/templates/index.build.html') 
   // theme: '@vuepress/theme-default/lib/node/index.js'
 });
