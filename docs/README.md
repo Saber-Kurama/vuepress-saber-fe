@@ -4,6 +4,14 @@ heroText: 面向 <b>未来</b> 的企业级<br>前端「全链路」开发服务
 tagline: 基于 Vue3 生态构建，致力于提升研发效率和改善开发体验
 actionText: 快速上手
 actionLink: /docs/guide/
+features:
+- title: 全新平台产品<b>通用设计语言</b>
+  details: 基于对企业中后台成百上千个业务形态的总结和抽象，提炼出一套标准化中后台体验设计原则与模式，并提供了开箱即用的高质量前端组件实现，将复杂的业务场景抽象为用户标准认知层的交互方式，让设计和研发无缝衔接。
+  action: /docs/components/
+  actionText: 查看体验
+- title: <b>移动优先</b>创造极致用户体验
+  details: 遵循『移动优先』的设计理念，保证所有组件在多端都拥有一致贯穿的良好体验。除此之外，你还可以使用栅格布局轻松地针对手机、平板和桌面端等不同设备或屏幕尺寸定制化设计多个固定布局，输出协调一致并具备高可用性的产品。
+  action: /docs/components/
+  actionText: 查看体验  
 ---
-# Hello
 sad

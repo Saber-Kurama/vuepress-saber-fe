@@ -119,9 +119,9 @@ const time = (name) => {
       />
     </div>
     <!-- 顾客 -->
-    <Patrons />
-    <Illustration1 :data="frontmatter.value?.features[0] || []" />
-    <Illustration2 :data="frontmatter.value?.features[0] || []" />
+    <!-- <Patrons /> -->
+    <Illustration1 :data="frontmatter.features[0] || []" />
+    <Illustration2 :data="frontmatter.features[1] || []" />
     <Uses />
     <Illustration3 :data="frontmatter.value?.features[0] || []" />
     <Illustration4 :data="frontmatter.value?.features[0] || []" />

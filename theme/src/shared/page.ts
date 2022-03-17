@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2022-03-14 21:32:36
- * @LastEditTime: 2022-03-17 17:26:39
+ * @LastEditTime: 2022-03-17 17:36:40
  * @LastEditors: saber
  * @Description: 
  */
@@ -20,6 +20,7 @@ export interface DefaultThemePageFrontmatter {
   tagline?: string
   actionText?: string
   actionLink?: string
+  features?: any[]
 }
 
 export interface DefaultThemeHomePageFrontmatter

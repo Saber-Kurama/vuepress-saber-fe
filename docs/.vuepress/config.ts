@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2022-03-14 09:59:34
- * @LastEditTime: 2022-03-17 15:51:07
+ * @LastEditTime: 2022-03-17 17:43:26
  * @LastEditors: saber
  * @Description: 
  */
@@ -53,7 +53,7 @@ function getNavbar (lang = '/') {
 export default defineUserConfig({
   // 站点配置
   lang: "zh-CN",
-  title: '你好， VuePress ！',
+  title: '前端开发服务平台',
   description: '这是我的第一个 VuePress 站点',
   head: [
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, shrink-to-fit=no' }],
