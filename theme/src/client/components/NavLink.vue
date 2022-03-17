@@ -25,8 +25,8 @@ const exact = computed(() => {
 <template>
   <router-link
     class="nav-link"
-    :to="link"
     v-if="!isExternal(link)"
+    :to="link"
     :exact="
       exact ||
       ($route.path.indexOf('/guide/') !== -1 &&

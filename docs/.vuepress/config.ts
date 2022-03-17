@@ -36,7 +36,7 @@ function getNavbar (lang = '/') {
       },
       {
         text: '物料开发',
-        link: `/docs/guide/`,
+        link: `https://arco.design/material/group/?groupId=73`,
       },
       {
         text: '生态系统',

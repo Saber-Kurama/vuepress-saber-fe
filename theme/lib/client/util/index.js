@@ -12,6 +12,7 @@ export function getHash(path) {
     }
 }
 export function isExternal(path) {
+    console.log('path', path, outboundRE.test(path));
     return outboundRE.test(path);
 }
 export function isMailto(path) {
