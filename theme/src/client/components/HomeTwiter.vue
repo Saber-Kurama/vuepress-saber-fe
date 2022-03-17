@@ -281,7 +281,7 @@ const scrollH = (e) => {
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @function getColor($colorx, $alpha: 1) {
   @return unquote("rgba(var(--vs-" + $colorx + "), " + $alpha + ")");
 }

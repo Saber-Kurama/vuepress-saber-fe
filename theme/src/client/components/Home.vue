@@ -123,8 +123,8 @@ const time = (name) => {
     <Illustration1 :data="frontmatter.features[0] || []" />
     <Illustration2 :data="frontmatter.features[1] || []" />
     <Uses />
-    <Illustration3 :data="frontmatter.value?.features[0] || []" />
-    <Illustration4 :data="frontmatter.value?.features[0] || []" />
+    <Illustration3 :data="frontmatter.features[2] || []" />
+    <Illustration4 :data="frontmatter.features[3] || []" />
     <Twitter />
     <PremiumThemes :data="frontmatter.value?.premiumThemes || {}" />
     <!-- <div

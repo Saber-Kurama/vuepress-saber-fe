@@ -57,22 +57,22 @@ const twits = ref([
     img: "/use/boxicons-vuesax-10.png",
     img2: "/use/boxicons-vuesax-9.png",
   },
-  {
-    name: "Adobe XD",
-    link: "https://www.adobe.com/es/products/xd.html",
-    img: "/use/adobe-xd-1.svg",
-  },
-  {
-    name: "Webpack",
-    link: "https://webpack.js.org/",
-    img: "/use/webpack-vuesax-13.png",
-    img2: "/use/webpack-vuesax-12.png",
-  },
-  {
-    name: "Illustrator",
-    link: "https://www.adobe.com/products/illustrator.html",
-    img: "/use/illustrator-vuesax-11.png",
-  },
+  // {
+  //   name: "Adobe XD",
+  //   link: "https://www.adobe.com/es/products/xd.html",
+  //   img: "/use/adobe-xd-1.svg",
+  // },
+  // {
+  //   name: "Webpack",
+  //   link: "https://webpack.js.org/",
+  //   img: "/use/webpack-vuesax-13.png",
+  //   img2: "/use/webpack-vuesax-12.png",
+  // },
+  // {
+  //   name: "Illustrator",
+  //   link: "https://www.adobe.com/products/illustrator.html",
+  //   img: "/use/illustrator-vuesax-11.png",
+  // },
 ]);
 watch(translatex, () => {
   if (translatex.value > 100) {
@@ -234,9 +234,8 @@ const scrollH = (e) => {
   <div class="con-twits">
     <header>
       <h2>
-        These are some of the <b>libraries</b>, <b>languages ​</b> and
-        <b>technologies</b> <br />that we use to create this beautiful
-        <b>framework</b>
+        基于领域模型与团队实践共同打造<b>一站式开发平台</b>，全面提升研发与管理效率<br>
+        适用于多种业务场景，让优秀的团队更优秀
       </h2>
     </header>
 
