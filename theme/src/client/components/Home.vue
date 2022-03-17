@@ -31,8 +31,23 @@ const numberWithCommas = computed(() => {
   parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   return parts.join(".");
 });
-
-const time = (val) => {};
+// 获取星
+// mounted(){
+//    fetch('https://api.github.com/repos/lusaxweb/vuesax')
+//   .then(response => response.json())
+//   .then(json => {
+//     this.star = json.stargazers_count
+//   })
+// },
+const icons = {
+  github,
+  vuesax,
+  discord,
+};
+const time = (name) => {
+  expand.value = false;
+  icons[name].value = false;
+};
 </script>
 <template>
   <main class="home" aria-labelledby="main-title">
@@ -103,6 +118,7 @@ const time = (val) => {};
         }"
       />
     </div>
+    <!-- 顾客 -->
     <Patrons />
     <Illustration1 :data="frontmatter.value?.features[0] || []" />
     <Illustration2 :data="frontmatter.value?.features[0] || []" />
