@@ -12,12 +12,13 @@ import 'boxicons/css/boxicons.min.css'
 import Vuesax from 'vuesax3';
 // import 'vuesax/dist/vuesax.css'
 import 'vuesax3/dist/vuesax.css'
+import Card from './global-components/Card1.vue'
 
 import './styles/index.scss'
 
 // 先执行这个钩子
 export default defineClientAppEnhance (({app}) => {
-  console.log('defineClientAppEnhance=====111s');
+  app.component('Card', Card)
   app.use(Vuesax)
   // app.component('VsButton', vsButton)
 })

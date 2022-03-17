@@ -8,6 +8,7 @@ import {
 import HeaderNotification from '../components/HeaderNotification.vue';
 import Navbar from '../components/Navbar.vue';
 import Home from '../components/Home.vue';
+import Page from '../components/Page.vue';
 import type { DefaultThemePageFrontmatter } from '../../shared'
 
 const frontmatter = usePageFrontmatter<DefaultThemePageFrontmatter>()
@@ -38,6 +39,19 @@ onUnmounted(() => {
       class="sidebar-mask"
     ></div>
     <Home v-if="frontmatter.home" ></Home>
+    <!-- :sidebar-items="sidebarItems" -->
+    <Page
+      v-else
+    >
+      <slot
+        name="page-top"
+        slot="top"
+      />
+      <slot
+        name="page-bottom"
+        slot="bottom"
+      />
+    </Page>
     <!-- <Content />
     {{frontmatter.home || 'ss'}} -->
   </div>
