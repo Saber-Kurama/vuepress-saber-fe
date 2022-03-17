@@ -3,4 +3,4 @@ node_modules
 .cache
 docs/.vuepress/dist
 theme-default/lib
-theme/lib
+# theme/lib

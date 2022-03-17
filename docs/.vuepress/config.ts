@@ -1,14 +1,14 @@
 /*
  * @Author: saber
  * @Date: 2022-03-14 09:59:34
- * @LastEditTime: 2022-03-17 17:43:26
+ * @LastEditTime: 2022-03-17 19:47:09
  * @LastEditors: saber
  * @Description: 
  */
 import path from 'path';
 import { defineUserConfig } from "vuepress";
 import type { DefaultThemeOptions } from "vuepress";
-import svgLoader from 'vite-svg-loader';
+// import svgLoader from 'vite-svg-loader';
 
 console.log('__dirname', __dirname)
 function getNavbar (lang = '/') {
@@ -74,7 +74,7 @@ export default defineUserConfig({
   bundler: '@vuepress/vite',
   bundlerConfig: {
     viteOptions: {
-      plugins: [svgLoader()]
+      plugins: []
     }
   }, 
   // theme: '@vuepress/theme-default/lib/node/index.js'

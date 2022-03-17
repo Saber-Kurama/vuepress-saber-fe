@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2022-03-14 21:32:36
- * @LastEditTime: 2022-03-17 18:41:23
+ * @LastEditTime: 2022-03-17 19:42:01
  * @LastEditors: saber
  * @Description: 
  */
@@ -16,13 +16,6 @@ export interface DefaultThemePageFrontmatter {
   home?: boolean
   navbar?: boolean
   pageClass?: string
-  heroText?: string
-  tagline?: string
-  actionText?: string
-  actionLink?: string
-  features?: any[]
-  premiumThemes: any
-  suscribe: string
 }
 
 export interface DefaultThemeHomePageFrontmatter
@@ -42,6 +35,10 @@ export interface DefaultThemeHomePageFrontmatter
     title: string
     details: string
   }[]
+  actionText?: string
+  actionLink?: string
+  premiumThemes: any
+  suscribe: string
   footer?: string
   footerHtml?: boolean
 }
