@@ -19,22 +19,29 @@ const twits = ref([
     name: "saber",
     user: "saber",
     link: "https://twitter.com/Atinux",
-    text: "",
-    img: "https://pbs.twimg.com/profile_images/1042510623962275840/1Iw_Mvud_400x400.jpg",
+    text: "一句描述",
+    img: "http://image.parligerly.com/avatar/20200327143435_MU8s5.jpeg",
   },
   {
     name: "陈关印",
     user: "陈关印",
     link: "https://twitter.com/PaurakhSharma",
-    text: "",
-    img: "https://pbs.twimg.com/profile_images/1042510623962275840/1Iw_Mvud_400x400.jpg",
+    text: "一句描述",
+    img: "http://image.parligerly.com/avatar/guan.jpeg",
   },
   {
     name: "张凯",
     user: "张凯",
     link: "_",
-    text: "",
-    img: "https://pbs.twimg.com/profile_images/1042510623962275840/1Iw_Mvud_400x400.jpg",
+    text: "一句描述",
+    img: "http://image.parligerly.com/avatar/20160826160524_kYLGa.jpeg",
+  },
+  {
+    name: "李国岩",
+    user: "李国岩",
+    link: "",
+    text: "一句描述",
+    img: "http://image.parligerly.com/avatar/20170621170536_dKenf.png",
   }
 ]);
 watch(translatex, () => {
