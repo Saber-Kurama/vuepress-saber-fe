@@ -34,14 +34,28 @@ const twits = ref([
     user: "张凯",
     link: "_",
     text: "一句描述",
-    img: "//image.parligerly.com/avatar/20160826160524_kYLGa.jpeg",
+    img: "//image.parligerly.com/avatar/motuoche.png",
   },
   {
     name: "李国岩",
     user: "李国岩",
     link: "",
     text: "一句描述",
-    img: "//image.parligerly.com/avatar/20170621170536_dKenf.png",
+    img: "//image.parligerly.com/avatar/85df36fa-3325-42b3-9473-7a8945e6b7b5.png",
+  },
+  {
+    name: "李昕哲",
+    user: "李昕哲",
+    link: "",
+    text: "一句描述",
+    img: "//image.parligerly.com/avatar/6.jpg",
+  },
+  {
+    name: "宋谦",
+    user: "宋谦",
+    link: "",
+    text: "一句描述",
+    img: "//image.parligerly.com/avatar/bc7e9c1f-407b-4204-9d1f-f131ad2f710f.jpg",
   }
 ]);
 watch(translatex, () => {
