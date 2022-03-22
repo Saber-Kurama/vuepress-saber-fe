@@ -28,6 +28,7 @@ const vuesaxTheme = ({ themePlugins = {}, ...localeOptions }, app) => {
                 '@vuepress/active-header-links',
                 (0, utils_2.resolveActiveHeaderLinksPluginOptions)(themePlugins),
             ],
+            ['@vuepress/palette', { preset: 'sass' }],
             ['@vuepress/theme-data', { themeData: localeOptions }],
         ]
     };

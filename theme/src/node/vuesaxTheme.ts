@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2022-03-14 20:48:41
- * @LastEditTime: 2022-03-15 11:16:37
+ * @LastEditTime: 2022-03-22 15:35:37
  * @LastEditors: saber
  * @Description: 
  */
@@ -54,6 +54,7 @@ export const vuesaxTheme: Theme<VuesaxThemeOptions> = ({ themePlugins = {}, ...l
         '@vuepress/active-header-links',
         resolveActiveHeaderLinksPluginOptions(themePlugins),
       ],
+      ['@vuepress/palette', { preset: 'sass' }],
       ['@vuepress/theme-data', { themeData: localeOptions }],
     ]
   }
