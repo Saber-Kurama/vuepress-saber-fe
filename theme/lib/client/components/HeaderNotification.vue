@@ -28,7 +28,7 @@ onMounted(() => {
         <i class="bx bxs-megaphone"></i>
       </div>
       <div class="text-n">
-        <h3>132个鲜活的生命，默哀一周。🙏🏻 🙏🏻 🙏🏻 </h3>
+        <!-- <h3>132个鲜活的生命，默哀一周。🙏🏻 🙏🏻 🙏🏻 </h3> -->
         <!-- <h3> 查看最新动态<b><router-link to="/docs/meta">组件开发</router-link></b> 🎉</h3> -->
         <!-- <p>See the examples and the new documentation</p> -->
       </div>

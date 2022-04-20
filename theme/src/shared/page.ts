@@ -41,6 +41,7 @@ export interface DefaultThemeHomePageFrontmatter
   suscribe: string
   footer?: string
   footerHtml?: boolean
+  docsHome?: boolean
 }
 
 export interface DefaultThemeNormalPageFrontmatter
