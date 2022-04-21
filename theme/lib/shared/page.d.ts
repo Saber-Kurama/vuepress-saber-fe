@@ -30,6 +30,7 @@ export interface DefaultThemeHomePageFrontmatter extends DefaultThemePageFrontma
     suscribe: string;
     footer?: string;
     footerHtml?: boolean;
+    docsHome?: boolean;
 }
 export interface DefaultThemeNormalPageFrontmatter extends DefaultThemePageFrontmatter {
     home?: false;

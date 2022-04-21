@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, reactive } from 'vue';
+import { computed, onMounted, onUnmounted, reactive, ref } from 'vue';
 import { useRouter } from 'vue-router'
 import {
   ClientOnly,
@@ -8,12 +8,27 @@ import {
 import HeaderNotification from '../components/HeaderNotification.vue';
 import Navbar from '../components/Navbar.vue';
 import Home from '../components/Home.vue';
+import DocsHome from '../components/DocsHome.vue';
 import Page from '../components/Page.vue';
-import type { DefaultThemePageFrontmatter } from '../../shared'
+import Sidebar from '../components/Sidebar.vue'
+import type { DefaultThemeHomePageFrontmatter } from '../../shared'
+import { resolveSidebarItems } from '../util';
 
-const frontmatter = usePageFrontmatter<DefaultThemePageFrontmatter>()
+const frontmatter = usePageFrontmatter<DefaultThemeHomePageFrontmatter>()
+const page = usePageData();
+console.log('frontmatter', frontmatter)
+console.log('pagepage????', page)
 // close sidebar after navigation
 const codesandbox = reactive<any>({url: null})
+const sidebarItems = computed(() => {
+ 
+  return []
+  // return resolveSidebarItems()
+})
+const isSidebarOpen = ref(false);
+const toggleSidebar = (to: any) => {
+  isSidebarOpen.value = typeof to === 'boolean' ? to : !isSidebarOpen.value
+}
 let unregisterRouterHook
 onMounted(() => {
   const router = useRouter()
@@ -39,6 +54,7 @@ onUnmounted(() => {
       class="sidebar-mask"
     ></div>
     <Home v-if="frontmatter.home" ></Home>
+    <DocsHome v-else-if="frontmatter.docsHome"/>
     <!-- :sidebar-items="sidebarItems" -->
     <Page
       v-else
@@ -52,8 +68,20 @@ onUnmounted(() => {
         slot="bottom"
       />
     </Page>
-    <!-- <Content />
-    {{frontmatter.home || 'ss'}} -->
+     <Sidebar
+      v-if="!frontmatter.home" 
+      :items="sidebarItems"
+      @toggle-sidebar="toggleSidebar"
+    >
+      <slot
+        name="sidebar-top"
+        slot="top"
+      />
+      <slot
+        name="sidebar-bottom"
+        slot="bottom"
+      />
+    </Sidebar>
   </div>
 </template>
 <style lang="scss">

@@ -100,7 +100,9 @@ const smooth = () => {
     offset += (leftx - offset) * speed;
 
     let scroll = "translateX(-" + offset + "px) translateZ(0)";
-    element.style.transform = scroll;
+    if(element){
+      element.style.transform = scroll;
+    }
 
     raf = requestAnimationFrame(smoothScroll);
   }

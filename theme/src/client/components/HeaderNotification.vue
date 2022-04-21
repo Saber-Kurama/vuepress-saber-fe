@@ -138,7 +138,7 @@ onMounted(() => {
     ~ .page {
       margin-top: 97px;
     }
-    ~ .siderbar {
+    ~ .sidebar {
       top: 97px;
     }
   }
