@@ -58,12 +58,12 @@ import DropdownTransition from "./DropdownTransition.vue";
 export default {
   name: "SidebarGroup",
   props: ["item", "open", "collapsable", "depth", "fixed"],
-  components: { DropdownTransition },
+  components: { DropdownTransition, SidebarLinks: () => import('./SidebarLink.vue') },
   // ref: https://vuejs.org/v2/guide/components-edge-cases.html#Circular-References-Between-Components
-  beforeCreate() {
-    this.$options.components.SidebarLinks =
-      require("./SidebarLinks.vue").default;
-  },
+  // beforeCreate() {
+  //   this.$options.components.SidebarLinks =
+  //     require("./SidebarLinks.vue").default;
+  // },
   methods: { isActive },
 };
 </script>

@@ -16,8 +16,8 @@
     </svg>
     <div class="content-sidebar">
       <slot name="top" />
-      <!-- <SidebarLinks :fixed="fixed" :depth="0" :items="items" />
-      <NavLinks2 /> -->
+      <SidebarLinks :fixed="fixed" :depth="0" :items="items" />
+      <!-- <NavLinks2 /> -->
       sss
       <slot name="bottom" />
     </div>
@@ -25,13 +25,13 @@
 </template>
 
 <script>
-// import SidebarLinks from "./SidebarLinks.vue";
+import SidebarLinks from "./SidebarLinks.vue";
 // import NavLinks2 from "./NavLinks2.vue";
 
 export default {
   name: "Sidebar",
 
-  components: {  },
+  components: { SidebarLinks },
 
   props: ["items", "fixed"],
 };
