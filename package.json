@@ -2,7 +2,8 @@
   "name": "vuepress-saber-fe",
   "private": true,
   "workspaces": [
-   
+    "theme",
+    "theme-default"
   ],
   "version": "0.0.1",
   "description": "前端开发平台",

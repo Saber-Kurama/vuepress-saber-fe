@@ -6,8 +6,9 @@
  * @Description:
  */
 import { defineClientAppSetup } from '@vuepress/client';
+import { setupDarkMode, setupSidebarItems } from './composables';
 export default defineClientAppSetup(() => {
-    // setupDarkMode()
-    // setupSidebarItems()
+    setupDarkMode();
+    setupSidebarItems();
     console.log('defineClientAppSetup=======sss=');
 });
