@@ -12,3 +12,7 @@ button/base
 
 ## 禁用按钮
 
+::: demo
+button/base
+:::
+
