@@ -9,32 +9,45 @@ import DocsHome from "../components/DocsHome.vue";
 import Page from "../components/Page.vue";
 import Sidebar from "../components/Sidebar.vue";
 import type { DefaultThemeHomePageFrontmatter } from "../../shared";
-import { resolveSidebarItems } from "../util";
+// import { resolveSidebarItems } from "../util";
+import {
+  useScrollPromise,
+  useSidebarItems,
+  useThemeLocaleData,
+} from '../composables'
 
 const frontmatter = usePageFrontmatter<DefaultThemeHomePageFrontmatter>();
 const page = usePageData();
+const themeLocale = useThemeLocaleData()
 // console.log("frontmatter", frontmatter);
 // console.log("pagepage????", page);
 // close sidebar after navigation
 const codesandbox = reactive<any>({ url: null });
-const sidebarItems = computed(() => {
-  return [
-    {
-      path: "/xxx",
-      type: "group",
-      title: "测试1",
-      sidebarDepth: 0,
-      children: [
-        {
-          path: "/xxx/xx",
-          title: "测试2",
-          sidebarDepth: 1,
-        },
-      ],
-    },
-  ];
-  // return resolveSidebarItems()
-});
+// navbar
+const shouldShowNavbar = computed(
+  () => frontmatter.value.navbar !== false && themeLocale.value.navbar !== false
+)
+// sidebar
+const sidebarItems = useSidebarItems()
+console.log('sidebarItems', sidebarItems);
+// const sidebarItems = computed(() => {
+//   return [
+//     {
+//       path: "/xxx",
+//       type: "group",
+//       title: "测试1",
+//       sidebarDepth: 0,
+//       children: [
+//         {
+//           path: "/xxx/xx",
+//           title: "测试2",
+//           sidebarDepth: 1,
+//         },
+//       ],
+//     },
+//   ];
+//   // return resolveSidebarItems()
+// });
 const isSidebarOpen = ref(false);
 const toggleSidebar = (to: any) => {
   isSidebarOpen.value = typeof to === "boolean" ? to : !isSidebarOpen.value;
@@ -69,14 +82,14 @@ onUnmounted(() => {
       <slot name="page-top" slot="top" />
       <slot name="page-bottom" slot="bottom" />
     </Page>
-    <!-- <Sidebar
+    <Sidebar
       v-if="!frontmatter.home"
       :items="sidebarItems"
       @toggle-sidebar="toggleSidebar"
     >
       <slot name="sidebar-top" slot="top" />
       <slot name="sidebar-bottom" slot="bottom" />
-    </Sidebar> -->
+    </Sidebar>
   </div>
 </template>
 <style lang="scss">

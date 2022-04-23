@@ -66,14 +66,24 @@ export default defineUserConfig({
   ],
   // // 主题和它的配置
   // // theme: '@vuesax/vuepress-theme-vuesax',
-  theme: path.resolve(__dirname, "../../theme/lib/node/index.js"),
+  // theme: path.resolve(__dirname, "../../theme/lib/node/index.js"),
   // // theme: path.resolve(__dirname, '../../theme-default/lib/node/index.js'),
-  // theme: '@vuepress/theme-default',
+  theme: '@vuepress/theme-default',
   themeConfig: {
+    nprogress: false,
     logo: "https://vuejs.org/images/logo.png",
     locales: {
       "/": {
         ...getNavbar(),
+        sidebar: {
+          '/docs/components/': {
+            text: '组件1111',
+            children: [
+              '/docs/components/README.md',
+              '/docs/components/buttton/index.md',
+            ]
+          } 
+        }
       },
     },
   },
@@ -83,10 +93,10 @@ export default defineUserConfig({
       plugins: [],
     },
   },
-  templateBuild: path.resolve(
-    __dirname,
-    "../../theme/templates/index.build.html"
-  ),
+  // templateBuild: path.resolve(
+  //   __dirname,
+  //   "../../theme/templates/index.build.html"
+  // ),
   plugins: [
     [
       "vuepress-plugin-demo-block-vue3",

@@ -16,7 +16,9 @@ import Card from './global-components/Card1.vue';
 import './styles/index.scss';
 // 先执行这个钩子
 export default defineClientAppEnhance(({ app }) => {
+    // @ts-ignore
     app.component('Card', Card);
+    // @ts-ignore
     app.use(Vuesax);
     // app.component('VsButton', vsButton)
 });
