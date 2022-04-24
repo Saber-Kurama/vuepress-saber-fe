@@ -1,4 +1,4 @@
-import type { Theme } from '@vuepress/core';
+import type { Theme } from "@vuepress/core";
 interface VuesaxThemeOptions {
     [key: string]: any;
 }

@@ -1,18 +1,22 @@
 <script>
+import { useSiteData, useRoute, usePageData } from "@vuepress/client";
+import {
+  useThemeData,
+  useThemeLocaleData,
+} from "@vuepress/plugin-theme-data/lib/client";
 import { isActive, hashRE, groupHeaders } from "../util";
+const $page = usePageData();
+const $route = useRoute();
+const $themeConfig = useThemeData();
+const $themeLocaleConfig = $themeConfig ;
+const $site = useSiteData();
 
 export default {
   functional: true,
 
   props: ["item", "sidebarDepth"],
 
-  render(
-    h,
-    {
-      parent: { $page, $site, $route, $themeConfig, $themeLocaleConfig },
-      props: { item, sidebarDepth },
-    }
-  ) {
+  render(h, { props: { item, sidebarDepth } }) {
     const NEWS = $page.frontmatter.NEWS || [];
     const UPDATE = $page.frontmatter.UPDATE || [];
     // console.log(NEWS)

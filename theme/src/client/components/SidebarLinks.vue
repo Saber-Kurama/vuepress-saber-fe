@@ -1,4 +1,10 @@
 <template>
+{{
+ items.length 
+}}
+{{
+ items 
+}}
   <ul class="sidebar-links" v-if="items.length">
     <li
       v-for="(item, i) in items"
@@ -14,6 +20,7 @@
         @toggle="toggleGroup(i)"
       />
       <!-- :collapsable="item.collapsable || item.collapsible" -->
+      <!-- <div v-else>{{ item }}</div> -->
       <SidebarLink v-else :sidebarDepth="sidebarDepth" :item="item" />
     </li>
   </ul>
