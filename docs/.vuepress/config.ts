@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2022-03-14 09:59:34
- * @LastEditTime: 2022-04-21 16:38:04
+ * @LastEditTime: 2022-04-24 20:46:41
  * @LastEditors: saber
  * @Description:
  */
@@ -79,6 +79,8 @@ export default defineUserConfig({
           "/docs/components/": [
             {
               text: "组件",
+              // type: 'group',
+              title: '组件',
               children: ["/docs/components/README.md", "/docs/components/button/index.md"],
             },
           ],
